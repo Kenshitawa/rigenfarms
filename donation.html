@@ -1,520 +1,1144 @@
+Here is the HTML code for a "Donate" page that uses the same theme and styling as your index page.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>RigenFarms | Donate – Grow Climate‑Smart Gardens</title>
+  <title>Donate — RigenFarms | Grow Climate‑Smart Gardens</title>
   <meta name="description" content="Support RigenFarms to expand wicking container gardens, empower schools, and build food‑secure communities. Donate via M‑Pesa, bank transfer, or online." />
-
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="images/1logo.jpg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/1logo.jpg" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/1logo.jpg" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     :root {
-      /* ─── WeCare Blue Palette ─── */
-      --primary: #1e3a8a;
-      --primary-light: #3b82f6;
-      --primary-dark: #1e40af;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --text: #1e293b;
-      --text-light: #334155;
-      --text-muted: #475569;
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --bg-light: #f1f5f9;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.2s ease;
-      --grad-brand: linear-gradient(135deg, var(--primary), var(--primary-light));
+      --ink: #0c1b2a;
+      --ink-soft: #33495f;
+      --muted: #5a7189;
+      --cream: #eef3fa;
+      --cream-2: #f6f9fc;
+      --sage: #d7e6f6;
+      --green: #124a80;
+      --green-2: #0b3560;
+      --leaf: #4f97d8;
+      --gold: #35c6f4;
+      --gold-ink: #052033;
+      --white: #ffffff;
+      --line: rgba(12, 27, 42, 0.12);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 14px rgba(9, 28, 48, 0.08);
+      --shadow: 0 24px 60px rgba(6, 22, 40, 0.20);
+      --shadow-soft: 0 14px 34px rgba(9, 28, 48, 0.10);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream-2);
       line-height: 1.5;
-      font-size: 1rem;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(53, 198, 244, 0.75); outline-offset: 4px; border-radius: 4px; }
 
-    /* Top bar */
-    .top-bar { background: var(--primary-dark); color: white; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
-    .top-bar-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: var(--transition); }
-    .top-bar-links a:hover { color: white; }
-    .top-bar-actions { display: flex; gap: 1rem; }
-    .top-btn { padding: 0.4rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; }
-    .top-btn.report { background: var(--accent); color: white; }
-    .top-btn.report:hover { background: #d97706; transform: translateY(-1px); }
-    .top-btn.donate { background: white; color: var(--primary); }
-    .top-btn.donate:hover { background: #f1f5f9; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .container-wide { width: min(1360px, calc(100% - 48px)); margin-inline: auto; }
 
-    /* Navbar */
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: var(--transition); }
-    .navbar.scrolled { box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1.5rem; }
-    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 10px; }
-    .brand-text p { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
-    .nav-menu { list-style: none; display: flex; align-items: center; gap: 0.25rem; }
-    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; padding: 0.6rem 1.1rem; border-radius: 40px; transition: var(--transition); }
-    .nav-menu a:hover, .nav-menu a.active { background: var(--bg-light); color: var(--primary); }
-    .mobile-toggle { display: none; background: none; border: 1px solid var(--border); padding: 0.6rem; border-radius: 10px; cursor: pointer; background: white; }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 16, 28, 0.55), rgba(6, 16, 28, 0));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 280ms ease, color 280ms ease, box-shadow 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-    /* Hero – lighter blue overlay */
-    .hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; min-height: 380px; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.45) 0%, rgba(30, 64, 175, 0.4) 50%, rgba(59, 130, 246, 0.35) 100%), url('images/donate.png'); background-size: cover; background-position: center; z-index: 0; }
-    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.5rem); color: white; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.2); }
-    .hero p { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.6; max-width: 650px; margin: 0 auto 1.2rem; }
-    .hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .site-header.is-scrolled,
+    .site-header.menu-open {
+      background: rgba(246, 249, 252, 0.86);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 8px 30px rgba(9, 28, 48, 0.08);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-    /* Sections */
-    .section { padding: 3rem 0; }
-    .section.soft { background: var(--bg-soft); }
-    .section-header { text-align: center; max-width: 750px; margin: 0 auto 2rem; }
-    .section-header h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); margin-bottom: 0.8rem; color: var(--primary-dark); }
-    .section-header p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .utility {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: border-color 280ms ease;
+    }
 
-    /* Donate Grid */
-    .donate-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: start; }
-    .card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; overflow: hidden; }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(30, 58, 138, 0.15); }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-brand); transform: scaleX(0); transform-origin: left; transition: var(--transition); }
-    .card:hover::before { transform: scaleX(1); }
-    .card h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
-    .sub { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5; }
-    .method { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; background: var(--bg-soft); margin-top: 1rem; }
-    .method-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
-    .method-title { display: flex; align-items: center; gap: 0.7rem; }
-    .m-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--grad-brand); display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0; }
-    .pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.7rem; border-radius: 40px; font-weight: 600; font-size: 0.7rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: var(--primary-dark); }
-    .details { display: grid; gap: 0.5rem; margin-top: 0.8rem; }
-    .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0.8rem; border-radius: 10px; background: white; border: 1px solid var(--border); font-size: 0.85rem; }
-    .row span { color: var(--text-muted); font-weight: 500; }
-    .row b { color: var(--text); font-weight: 700; }
-    .copy-btn { margin-top: 0.8rem; width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; padding: 0.7rem; border-radius: 10px; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; font-size: 0.8rem; transition: var(--transition); }
-    .copy-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: var(--primary-light); color: var(--primary); }
-    .note { margin-top: 0.8rem; padding: 0.8rem; border-radius: var(--radius); background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #065f46; font-size: 0.8rem; display: flex; gap: 0.6rem; align-items: flex-start; }
+    .site-header.is-scrolled .utility,
+    .site-header.menu-open .utility { border-color: var(--line); }
 
-    /* Form */
-    .form-grid { display: grid; gap: 0.8rem; margin-top: 0.8rem; }
-    .field label { display: block; font-weight: 600; color: var(--text-light); margin-bottom: 0.3rem; font-size: 0.85rem; }
-    .field input, .field textarea, .field select { width: 100%; padding: 0.7rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: white; outline: none; font-size: 0.9rem; transition: var(--transition); }
-    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); }
-    .field textarea { min-height: 90px; resize: vertical; }
-    .submit { width: 100%; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; border-radius: 40px; padding: 0.8rem 1rem; font-weight: 600; font-size: 0.9rem; transition: var(--transition); background: var(--grad-brand); color: white; margin-top: 0.5rem; }
-    .submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .utility-inner,
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-    /* Impact Grid */
-    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
-    .impact { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; text-align: center; transition: var(--transition); }
-    .impact:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .mini { width: 48px; height: 48px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); display: grid; place-items: center; margin: 0 auto 0.8rem; color: var(--primary); font-size: 1.1rem; }
-    .impact h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
-    .impact p { color: var(--text-muted); font-size: 0.8rem; line-height: 1.5; }
+    .utility-inner { min-height: 40px; }
 
-    /* Footer */
-    .footer { background: #0a1628; color: white; padding: 3rem 0 1.5rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
-    .footer-brand img { height: 52px; background: white; padding: 8px; border-radius: 12px; }
-    .footer-brand-text h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; margin-bottom: 0.2rem; }
-    .footer-brand-text p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
-    .footer h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: white; }
-    .footer ul li { margin-bottom: 0.5rem; list-style: none; }
-    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.4rem; }
-    .footer a:hover { color: white; transform: translateX(3px); }
-    .footer-contact li { display: flex; align-items: start; gap: 0.6rem; color: rgba(255,255,255,0.75); margin-bottom: 0.7rem; font-size: 0.85rem; }
-    .footer-contact i { color: var(--primary-light); margin-top: 0.15rem; }
-    .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
-    .social-links a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: grid; place-items: center; color: white; transition: var(--transition); }
-    .social-links a:hover { background: var(--primary-light); transform: translateY(-2px); }
-    .footer-bottom { text-align: center; padding-top: 1rem; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .utility-links,
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .utility-links { gap: 28px; opacity: 0.85; }
+    .utility-actions { display: flex; align-items: center; gap: 20px; }
+
+    .nav-inner { min-height: 80px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: background 280ms ease;
+    }
+
+    .site-header.is-scrolled .brand-mark,
+    .site-header.menu-open .brand-mark { background: var(--white); }
+
+    .brand-title {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links { gap: 4px; }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 200ms ease, color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-item.has-dropdown .nav-link { padding-right: 10px; }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-right: 4px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .dropdown-toggle i { transition: transform 220ms ease; display: block; }
+    .dropdown-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+    .nav-link:hover,
+    .dropdown-toggle:hover,
+    .dropdown-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.14); }
+
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.menu-open .nav-link:hover,
+    .site-header.is-scrolled .dropdown-toggle:hover,
+    .site-header.menu-open .dropdown-toggle:hover,
+    .site-header.is-scrolled .dropdown-toggle[aria-expanded="true"],
+    .site-header.menu-open .dropdown-toggle[aria-expanded="true"] { background: rgba(18, 74, 128, 0.08); color: var(--green); }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(6, 22, 40, 0.16);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+      z-index: 5;
+    }
+
+    .dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-item.has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .dropdown a:hover { background: var(--cream); color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-left: 6px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), #1fa3e0);
+      color: var(--gold-ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(53, 198, 244, 0.32);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(53, 198, 244, 0.42);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      min-height: 60vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("images/donate.png") center / cover no-repeat;
+      transform: scale(1.05);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.88) 0%, rgba(6, 22, 40, 0.5) 55%, rgba(6, 22, 40, 0.2) 100%),
+                  linear-gradient(0deg, rgba(5, 16, 28, 0.8) 0%, rgba(6, 22, 40, 0.2) 40%, rgba(6, 22, 40, 0.5) 100%);
+    }
+
+    .page-hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: min(50vw, 600px);
+      aspect-ratio: 1;
+      right: -5%;
+      top: -10%;
+      background: radial-gradient(circle, rgba(53, 198, 244, 0.28), rgba(53, 198, 244, 0) 68%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.05) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-20px, -8px, 0); }
+    }
+
+    .page-hero-content {
+      width: min(800px, 100%);
+      padding: 200px 0 80px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .page-hero h1,
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 700;
+      background: linear-gradient(100deg, #ffffff 55%, #bfe6fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 0;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--cream-2);
+    }
+
+    .section.alt { background: var(--cream); }
+
+    .section-kicker {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+
+    .card h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .method {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      background: var(--cream-2);
+      margin-top: 1rem;
+    }
+
+    .method-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .method-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .m-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(18, 74, 128, 0.12), rgba(53, 198, 244, 0.16));
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      background: rgba(53, 198, 244, 0.1);
+      border: 1px solid rgba(53, 198, 244, 0.3);
+      color: var(--green);
+    }
+
+    .details {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+
+    .row span { color: var(--muted); font-weight: 500; }
+    .row b { color: var(--ink); font-weight: 700; }
+
+    .copy-btn {
+      margin-top: 0.8rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 200ms ease;
+      color: var(--ink-soft);
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--leaf);
+      color: var(--green);
+    }
+
+    .note {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      border-radius: var(--radius-sm);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #065f46;
+      font-size: 0.8rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      outline: none;
+      font-size: 0.9rem;
+      transition: all 200ms ease;
+    }
+
+    .field textarea {
+      border-radius: var(--radius-sm);
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--leaf);
+      box-shadow: 0 0 0 3px rgba(79, 151, 216, 0.12);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 26px;
+      border-radius: 60px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease, filter 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #1487c9);
+      color: var(--gold-ink);
+      box-shadow: 0 16px 34px rgba(53, 198, 244, 0.32);
+      width: 100%;
+    }
+
+    .btn-primary:hover { filter: brightness(1.06); box-shadow: 0 22px 46px rgba(53, 198, 244, 0.42); }
+
+    .btn-dark { background: var(--green); color: var(--white); }
+    .btn-dark:hover { background: var(--green-2); box-shadow: 0 14px 30px rgba(18, 74, 128, 0.28); }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 38px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 48px;
+      background: var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .feature-tile {
+      min-height: 220px;
+      padding: 32px 24px;
+      background: var(--white);
+      transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+      text-align: center;
+    }
+
+    .feature-tile:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      background: #fbfdff;
+      z-index: 2;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(18, 74, 128, 0.12), rgba(53, 198, 244, 0.16));
+      color: var(--green);
+      font-size: 1.3rem;
+    }
+
+    .feature-tile h3 { margin: 0 0 12px; font-size: 1.1rem; line-height: 1.3; }
+    .feature-tile p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 0.85rem; }
 
     /* Toast */
-    .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%) translateY(20px); background: var(--text); color: white; border-radius: 40px; padding: 0.7rem 1.2rem; display: flex; gap: 0.6rem; align-items: center; box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; font-weight: 600; font-size: 0.85rem; z-index: 3000; }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 40px;
+      padding: 0.7rem 1.4rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+      font-weight: 600;
+      font-size: 0.85rem;
+      z-index: 100;
+    }
+
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .top-bar { display: none; }
-      .mobile-toggle { display: flex; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; gap: 0.5rem; padding: 1rem; transform: translateY(-150%); transition: 0.25s ease; box-shadow: var(--shadow-lg); border-bottom: 1px solid var(--border); z-index: 999; }
-      .nav-menu.active { transform: translateY(0); }
-      .nav-menu a { width: 100%; text-align: center; }
+    /* Footer */
+    .footer {
+      background: #061424;
+      color: var(--white);
+      padding: 70px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .footer-brand img { width: 48px; height: 48px; padding: 5px; border-radius: 50%; background: var(--white); }
+    .footer-brand strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.1rem; }
+
+    .footer p { color: rgba(255, 255, 255, 0.65); margin: 0; }
+    .footer h3 { margin: 0 0 18px; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-links { flex-direction: column; align-items: flex-start; gap: 12px; list-style: none; display: flex; }
+    .footer-links a, .footer-contact a, .footer-contact span { color: rgba(255, 255, 255, 0.68); transition: color 180ms; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+    .footer-contact { display: grid; gap: 14px; font-style: normal; }
+    .newsletter { display: flex; gap: 8px; margin-top: 24px; }
+    .newsletter input {
+      width: 100%; min-height: 48px; border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 0 16px; color: white; background: rgba(255, 255, 255, 0.08);
+    }
+    .newsletter input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .newsletter button {
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); cursor: pointer;
+    }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.7); transition: 180ms; }
+    .socials a:hover { background: var(--gold); color: var(--gold-ink); transform: translateY(-2px); }
+
+    .wa-fab {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px;
+      display: grid; place-items: center; border-radius: 50%; background: #25d366; color: white;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.35); font-size: 1.6rem;
+    }
+    .wa-fab:hover { transform: translateY(-3px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 100ms; }
+
+    @media (max-width: 1080px) {
+      .nav-links { position: fixed; top: 120px; left: 24px; right: 24px; display: none; padding: 16px; border-radius: var(--radius); background: white; color: var(--ink); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .nav-item { flex-wrap: wrap; }
+      .dropdown { position: static; width: 100%; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; background: transparent; padding: 0 0 0 16px; max-height: 0; overflow: hidden; transition: max-height 260ms ease; }
+      .dropdown.is-open { max-height: 400px; }
+      .dropdown-toggle { order: 2; margin-left: auto; }
+      .nav-link { order: 1; flex: 1; }
+      .menu-toggle { display: flex; }
+      .utility-actions { display: none; }
       .donate-grid { grid-template-columns: 1fr; }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .feature-row { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 640px) {
-      .impact-grid { grid-template-columns: 1fr; }
-      .hero-cta { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
+
+    @media (max-width: 780px) {
+      .container, .container-wide { width: min(100% - 32px, var(--max)); }
+      .utility { display: none; }
+      .feature-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
-    .btn { border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 60px; padding: 0.6rem 1.2rem; font-weight: 600; font-size: 0.85rem; transition: var(--transition); }
-    .btn.primary { background: white; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .btn.secondary { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: white; }
-    .btn.primary:hover, .btn.secondary:hover { transform: translateY(-2px); }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <ul class="top-bar-links">
-          <li><a href="contactus.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="aboutus.html#faqs">FAQs</a></li>
+  <header class="site-header" id="siteHeader">
+    <div class="utility">
+      <div class="container-wide utility-inner">
+        <ul class="utility-links">
+          <li><a href="contactus.html">Contact</a></li>
+          <li><a href="annual-reports.html">Reports</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
-        <div class="top-bar-actions">
-          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" class="top-btn report"><i class="fab fa-linkedin-in"></i> Follow on LinkedIn</a>
-          <a href="donation.html" class="top-btn donate"><i class="fas fa-seedling"></i> Support Our Farms</a>
+        <div class="utility-actions">
+          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/254706476939" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </div>
-  </div>
+    <nav class="container-wide nav-inner" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="RigenFarms home">
+        <img class="brand-mark" src="images/logo.png" alt="" />
+        <span>
+          <span class="brand-title">RigenFarms</span>
+          <span class="brand-kicker">Grow smart. Eat well. Live green.</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="aboutus.html">About</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="aboutus.html" role="menuitem">Mission</a>
+            <a href="aboutus.html#team" role="menuitem">Team</a>
+            <a href="impact.html" role="menuitem">Impact</a>
+          </div>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="projects.html">Programs</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Programs menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="projects.html" role="menuitem">Agriculture</a>
+            <a href="projects.html" role="menuitem">School Gardens</a>
+            <a href="memoranda.html" role="menuitem">Resources</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#innovation">Innovation</a></li>
+        <li><a class="nav-link" href="index.html#insights">Insights</a></li>
+        <li><a class="nav-link" href="volunteers.html">Get Involved</a></li>
+        <li><a class="nav-cta" href="donation.html">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="index.html">
-          <img src="images/logo.png" alt="RigenFarms Logo" />
-          <div class="brand-text"><p>GROW • NOURISH • SUSTAIN</p></div>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Our Work</a></li>
-          <li><a href="volunteers.html">Get Involved</a></li>
-          <li><a href="donation.html" class="active">Donate</a></li>
-        </ul>
-        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h1>Grow a Garden, Grow a Future</h1>
-        <p>Your donation helps RigenFarms install wicking container gardens in schools, train communities in climate‑smart farming, and put fresh food on tables across Kenya.</p>
-        <div class="hero-cta">
-          <a href="#donate" class="btn primary"><i class="fas fa-hand-holding-heart"></i> Donate Now</a>
-          <a href="#impact" class="btn secondary"><i class="fas fa-seedling"></i> See your impact</a>
+  <main>
+    <section class="page-hero" id="top">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero-content reveal is-visible">
+          <span class="eyebrow">Support our mission</span>
+          <h1>Grow a garden, grow a future.</h1>
+          <p class="hero-copy">Your donation helps RigenFarms install wicking container gardens in schools, train communities in climate‑smart farming, and put fresh food on tables across Kenya.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section soft" id="donate">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>Ways to Donate</h2>
-        <p>Choose a method that works best for you. For help, contact <b>info@rigenfarms.org</b> or call <b>+254 797 680921</b>.</p>
-      </div>
+    <section class="section alt" id="donate">
+      <div class="container">
+        <div class="donate-grid">
+          <div class="card reveal">
+            <h3>Ways to Donate</h3>
+            <p class="sub">Choose a method that works best for you. For help, contact <b>rigenfarms@gmail.com</b> or call <b>+254 706 476 939</b>.</p>
 
-      <div class="donate-grid">
-        <div class="card reveal">
-          <h3>Donate via M‑Pesa</h3>
-          <p class="sub">Fast and convenient. Copy details, donate, then share your reference so we can thank you.</p>
-
-          <div class="method">
-            <div class="method-top">
-              <div class="method-title">
-                <div class="m-icon"><i class="fas fa-mobile-screen-button"></i></div>
-                <div><b>M‑Pesa Paybill</b><br/><small style="color:var(--text-muted);">Recommended</small></div>
+            <div class="method">
+              <div class="method-top">
+                <div class="method-title">
+                  <div class="m-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                  <div><b>M‑Pesa Paybill</b><br/><small style="color:var(--muted);">Recommended</small></div>
+                </div>
+                <span class="pill"><i class="fa-solid fa-bolt"></i> Instant</span>
               </div>
-              <span class="pill"><i class="fas fa-bolt"></i> Instant</span>
+              <div class="details" id="mpesaDetails">
+                <div class="row"><span>Paybill Number</span><b id="paybillNo">XXXXXX</b></div>
+                <div class="row"><span>Account Number</span><b id="accountNo">RIGENFARMS</b></div>
+                <div class="row"><span>Account Name</span><b>RigenFarms</b></div>
+              </div>
+              <button class="copy-btn" type="button" id="copyMpesa"><i class="fa-solid fa-copy"></i> Copy M‑Pesa Details</button>
+              <div class="note">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>After donating, keep your transaction message (MPESA code). Share it on the form so we can confirm.</div>
+              </div>
             </div>
 
-            <div class="details" id="mpesaDetails">
-              <div class="row"><span>Paybill Number</span><b id="paybillNo">XXXXXX</b></div>
-              <div class="row"><span>Account Number</span><b id="accountNo">RIGENFARMS</b></div>
-              <div class="row"><span>Account Name</span><b>RigenFarms</b></div>
-            </div>
-
-            <button class="copy-btn" type="button" id="copyMpesa"><i class="fas fa-copy"></i> Copy M‑Pesa Details</button>
-
-            <div class="note">
-              <i class="fas fa-circle-info"></i>
-              <div>After donating, keep your transaction message (MPESA code). Share it on the form so we can confirm.</div>
+            <h3 style="margin-top:1.4rem;">Bank Transfer</h3>
+            <div class="method">
+              <div class="method-top">
+                <div class="method-title">
+                  <div class="m-icon"><i class="fa-solid fa-building-columns"></i></div>
+                  <div><b>Bank Details</b><br/><small style="color:var(--muted);">Secure</small></div>
+                </div>
+                <span class="pill"><i class="fa-solid fa-shield-halved"></i> Secure</span>
+              </div>
+              <div class="details" id="bankDetails">
+                <div class="row"><span>Bank Name</span><b>YOUR BANK</b></div>
+                <div class="row"><span>Account Name</span><b>RigenFarms</b></div>
+                <div class="row"><span>Account Number</span><b>XXXXXXXXXX</b></div>
+                <div class="row"><span>Branch</span><b>XXXXX</b></div>
+              </div>
+              <button class="copy-btn" type="button" id="copyBank"><i class="fa-solid fa-copy"></i> Copy Bank Details</button>
             </div>
           </div>
 
-          <h3 style="margin-top:1.2rem;">Bank Transfer</h3>
-
-          <div class="method">
-            <div class="method-top">
-              <div class="method-title">
-                <div class="m-icon"><i class="fas fa-building-columns"></i></div>
-                <div><b>Bank Details</b><br/><small style="color:var(--text-muted);">Secure</small></div>
+          <div class="card reveal delay-1">
+            <h3>Donation Acknowledgement</h3>
+            <p class="sub">Share your details so we can confirm your contribution and send a thank‑you note.</p>
+            <form class="form-grid" id="donationForm">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="e.g. Jane Achieng" required />
               </div>
-              <span class="pill"><i class="fas fa-shield-halved"></i> Secure</span>
-            </div>
-
-            <div class="details" id="bankDetails">
-              <div class="row"><span>Bank Name</span><b>YOUR BANK</b></div>
-              <div class="row"><span>Account Name</span><b>RigenFarms</b></div>
-              <div class="row"><span>Account Number</span><b>XXXXXXXXXX</b></div>
-              <div class="row"><span>Branch</span><b>XXXXX</b></div>
-            </div>
-
-            <button class="copy-btn" type="button" id="copyBank"><i class="fas fa-copy"></i> Copy Bank Details</button>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="e.g. jane@email.com" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone Number (optional)</label>
+                <input id="phone" type="tel" placeholder="e.g. +254 7xx xxx xxx" />
+              </div>
+              <div class="field">
+                <label for="amount">Amount (KES)</label>
+                <input id="amount" type="number" min="1" placeholder="e.g. 2000" required />
+              </div>
+              <div class="field">
+                <label for="methodSel">Payment Method</label>
+                <select id="methodSel" required>
+                  <option value="">Select…</option>
+                  <option value="mpesa">M‑Pesa</option>
+                  <option value="bank">Bank Transfer</option>
+                  <option value="online">Online Link</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reference">Reference (MPESA code / bank ref)</label>
+                <input id="reference" type="text" placeholder="e.g. QW12AB34CD" />
+              </div>
+              <div class="field">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" placeholder="Any note or dedication…"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Details</button>
+              <p style="color:var(--muted); font-size:0.75rem; margin-top:0.5rem; text-align:center;">This opens your email app. Press send to complete your submission.</p>
+            </form>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="card reveal">
-          <h3>Donation Acknowledgement</h3>
-          <p class="sub">Share your details so we can confirm your contribution and send a thank‑you note.</p>
-
-          <form class="form-grid" id="donationForm">
-            <div class="field">
-              <label for="name">Full Name</label>
-              <input id="name" type="text" placeholder="e.g. Jane Achieng" required />
-            </div>
-
-            <div class="field">
-              <label for="email">Email Address</label>
-              <input id="email" type="email" placeholder="e.g. jane@email.com" required />
-            </div>
-
-            <div class="field">
-              <label for="phone">Phone Number (optional)</label>
-              <input id="phone" type="tel" placeholder="e.g. +254 7xx xxx xxx" />
-            </div>
-
-            <div class="field">
-              <label for="amount">Amount (KES)</label>
-              <input id="amount" type="number" min="1" placeholder="e.g. 2000" required />
-            </div>
-
-            <div class="field">
-              <label for="methodSel">Payment Method</label>
-              <select id="methodSel" required>
-                <option value="">Select…</option>
-                <option value="mpesa">M‑Pesa</option>
-                <option value="bank">Bank Transfer</option>
-                <option value="online">Online Link</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="reference">Reference (MPESA code / bank ref)</label>
-              <input id="reference" type="text" placeholder="e.g. QW12AB34CD" />
-            </div>
-
-            <div class="field">
-              <label for="message">Message (optional)</label>
-              <textarea id="message" placeholder="Any note or dedication…"></textarea>
-            </div>
-
-            <button class="submit" type="submit"><i class="fas fa-paper-plane"></i> Submit Details</button>
-            <p style="color:var(--text-muted); font-size:0.75rem; margin-top:0.5rem;">This opens your email app. Press send to complete your submission.</p>
-          </form>
+    <section class="section" id="impact">
+      <div class="container">
+        <div class="reveal" style="text-align:center; max-width:700px; margin:0 auto 48px;">
+          <p class="section-kicker">Your impact</p>
+          <h2 class="section-title">What your gift grows.</h2>
+          <p class="section-copy">Every shilling plants the seed for a stronger, food‑secure community. Here's how your support takes root.</p>
+        </div>
+        <div class="feature-row">
+          <article class="feature-tile reveal">
+            <div class="feature-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>School Gardens</h3>
+            <p>Wicking beds in primary & secondary schools that feed pupils and teach climate‑smart skills.</p>
+          </article>
+          <article class="feature-tile reveal delay-1">
+            <div class="feature-icon"><i class="fa-solid fa-fill-drip"></i></div>
+            <h3>Wicking Technology</h3>
+            <p>Water‑efficient container gardens that slash water use by half and double vegetable yields.</p>
+          </article>
+          <article class="feature-tile reveal">
+            <div class="feature-icon"><i class="fa-solid fa-people-roof"></i></div>
+            <h3>Community Hubs</h3>
+            <p>Shared gardens that become local food production centres, boosting nutrition and resilience.</p>
+          </article>
+          <article class="feature-tile reveal delay-1">
+            <div class="feature-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+            <h3>Training & Mentorship</h3>
+            <p>Workshops on composting, soil health, and agri‑business for youth and women farmers.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="impact">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>What Your Gift Grows</h2>
-        <p>Every shilling plants the seed for a stronger, food‑secure community. Here’s how your support takes root.</p>
-      </div>
-
-      <div class="impact-grid">
-        <div class="impact">
-          <div class="mini"><i class="fas fa-school"></i></div>
-          <h4>School Gardens</h4>
-          <p>Wicking beds in primary & secondary schools that feed pupils and teach climate‑smart skills.</p>
-        </div>
-
-        <div class="impact">
-          <div class="mini"><i class="fas fa-fill-drip"></i></div>
-          <h4>Wicking Technology</h4>
-          <p>Water‑efficient container gardens that slash water use by half and double vegetable yields.</p>
-        </div>
-
-        <div class="impact">
-          <div class="mini"><i class="fas fa-people-roof"></i></div>
-          <h4>Community Hubs</h4>
-          <p>Shared gardens that become local food production centres, boosting nutrition and resilience.</p>
-        </div>
-
-        <div class="impact">
-          <div class="mini"><i class="fas fa-chalkboard-teacher"></i></div>
-          <h4>Training & Mentorship</h4>
-          <p>Workshops on composting, soil health, and agri‑business for youth and women farmers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img src="images/logo.png" alt="RigenFarms Logo" />
-            <div class="footer-brand-text">
-              <h4>RigenFarms</h4>
-              <p>Grow · Nourish · Sustain</p>
-            </div>
+            <img src="images/logo.png" alt="" />
+            <div><strong>RigenFarms</strong><span>Grow smart. Eat well.</span></div>
           </div>
-
-          <p style="font-size:0.85rem; line-height:1.6;">
-            A community-driven initiative promoting climate‑smart agriculture through innovative wicking container gardening, empowering schools and communities for a food‑secure, resilient future.
-          </p>
-
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <p>Empowering schools and communities with climate‑smart wicking container gardening to build food security and resilience across Kenya.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
-
         <div>
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="projects.html">Our Work</a></li>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="projects.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
           </ul>
         </div>
-
         <div>
-          <h5>Resources</h5>
-          <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="annual-reports.html">Reports</a></li>
+            <li><a href="memoranda.html">Guides</a></li>
             <li><a href="donation.html">Donate</a></li>
           </ul>
         </div>
-
         <div>
-          <h5>Contact</h5>
-          <ul class="footer-contact">
-            <li><i class="fas fa-envelope"></i><span>info@rigenfarms.org</span></li>
-            <li><i class="fas fa-phone"></i><span>+254 706 476939<br>+254 706 476939</span></li>
-            <li><i class="fas fa-map-marker-alt"></i><span>Kisumu, Kenya</span></li>
-          </ul>
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <a href="mailto:rigenfarms@gmail.com">rigenfarms@gmail.com</a>
+            <a href="tel:+254706476939">+254 706 476 939</a>
+            <span>Kisumu, Kenya</span>
+          </address>
+          <form class="newsletter">
+            <input type="email" placeholder="Email updates" />
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> RigenFarms. All Rights Reserved. Rooted in Education and Environmental Stewardship.</p>
+        <span>&copy; <span id="year"></span> RigenFarms.</span>
+        <span><a href="privacy.html">Privacy Policy</a></span>
       </div>
     </div>
   </footer>
 
-  <div class="toast" id="toast"><i class="fas fa-circle-check"></i><span id="toastText">Copied</span></div>
+  <a class="wa-fab" href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastText">Copied</span></div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    const mobileToggle = document.getElementById('mobileToggle'),
-          navMenu = document.getElementById('navMenu'),
-          navbar = document.getElementById('navbar');
+    function updateHeader() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
 
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      if (!isOpen) closeAllDropdowns();
     });
 
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
+    navLinks.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && !e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      } else if (link && e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       }
     });
 
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+    const dropdownToggles = Array.from(document.querySelectorAll(".dropdown-toggle"));
 
-    const toast = document.getElementById('toast'),
-          toastText = document.getElementById('toastText');
+    function closeAllDropdowns(except) {
+      dropdownToggles.forEach((btn) => {
+        if (btn === except) return;
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.classList.remove("is-open");
+      });
+    }
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        const willOpen = btn.getAttribute("aria-expanded") !== "true";
+        closeAllDropdowns(btn);
+        btn.setAttribute("aria-expanded", String(willOpen));
+        dropdown.classList.toggle("is-open", willOpen);
+      });
+    });
+
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        dropdownToggles.forEach((btn) => { if (document.activeElement === btn.nextElementSibling) btn.focus(); });
+      }
+    });
+    document.querySelectorAll(".dropdown").forEach((d) => d.addEventListener("click", (e) => e.stopPropagation()));
+    document.querySelector(".newsletter")?.addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.reset(); });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
+
+    /* Toast */
+    const toast = document.getElementById("toast"), toastText = document.getElementById("toastText");
     let toastTimer = null;
 
     function showToast(msg) {
       toastText.textContent = msg;
-      toast.classList.add('show');
+      toast.classList.add("show");
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2000);
     }
 
     async function copyText(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        showToast("Copied ✓");
-      } catch {
-        showToast("Copy manually");
-      }
+      try { await navigator.clipboard.writeText(text); showToast("Copied ✓"); }
+      catch { showToast("Copy manually"); }
     }
 
-    document.getElementById('copyMpesa').addEventListener('click', () => {
-      const paybill = document.getElementById('paybillNo').innerText,
-            account = document.getElementById('accountNo').innerText;
+    document.getElementById("copyMpesa").addEventListener("click", () => {
+      const paybill = document.getElementById("paybillNo").innerText,
+            account = document.getElementById("accountNo").innerText;
       copyText(`RigenFarms M‑Pesa Paybill: ${paybill} | Account: ${account}`);
     });
 
-    document.getElementById('copyBank').addEventListener('click', () => {
-      const bankLines = Array.from(document.querySelectorAll('#bankDetails .row'))
-        .map(r => r.innerText.replace(/\n/g, ' ').trim())
-        .join(' | ');
+    document.getElementById("copyBank").addEventListener("click", () => {
+      const bankLines = Array.from(document.querySelectorAll("#bankDetails .row"))
+        .map(r => r.innerText.replace(/\n/g, " ").trim())
+        .join(" | ");
       copyText(`RigenFarms Bank Details: ${bankLines}`);
     });
 
-    document.getElementById('donationForm').addEventListener('submit', (e) => {
+    document.getElementById("donationForm").addEventListener("submit", (e) => {
       e.preventDefault();
-
-      const name = document.getElementById('name').value,
-            email = document.getElementById('email').value,
-            phone = document.getElementById('phone').value,
-            amount = document.getElementById('amount').value,
-            method = document.getElementById('methodSel').value,
-            reference = document.getElementById('reference').value,
-            message = document.getElementById('message').value;
+      const name = document.getElementById("name").value,
+            email = document.getElementById("email").value,
+            phone = document.getElementById("phone").value,
+            amount = document.getElementById("amount").value,
+            method = document.getElementById("methodSel").value,
+            reference = document.getElementById("reference").value,
+            message = document.getElementById("message").value;
 
       const subject = `Donation Acknowledgement: ${name}`;
-      const body = `Donation Details\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\nAmount: KES ${amount}\nPayment Method: ${method}\nReference: ${reference || '-'}\nMessage: ${message || '-'}\n\nThank you for supporting RigenFarms – together we grow resilient communities!`;
+      const body = `Donation Details\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "-"}\nAmount: KES ${amount}\nPayment Method: ${method}\nReference: ${reference || "-"}\nMessage: ${message || "-"}\n\nThank you for supporting RigenFarms – together we grow resilient communities!`;
 
-      window.location.href = `mailto:info@rigenfarms.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:rigenfarms@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       showToast("Opening email client...");
       setTimeout(() => { e.target.reset(); }, 1000);
     });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('active');
-      });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
+```

@@ -3,352 +3,1053 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Our Programs - RigenFarms | Climate-Smart Agriculture & Wicking Gardens</title>
+  <title>Our Programs — RigenFarms | Climate-Smart Agriculture & Wicking Gardens</title>
   <meta name="description" content="Discover RigenFarms' innovative climate-smart programs: wicking container gardening, school food security, community resilience, nutrition education, and youth agripreneurship." />
-  <link rel="icon" href="images/logo.png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     :root {
-      --primary: #1e3a8a;
-      --primary-light: #3b82f6;
-      --primary-dark: #1e40af;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --text: #1e293b;
-      --text-light: #334155;
-      --text-muted: #475569;
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --bg-light: #f1f5f9;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.2s ease;
+      --ink: #0c1b2a;
+      --ink-soft: #33495f;
+      --muted: #5a7189;
+      --cream: #eef3fa;
+      --cream-2: #f6f9fc;
+      --sage: #d7e6f6;
+      --green: #124a80;
+      --green-2: #0b3560;
+      --leaf: #4f97d8;
+      --gold: #35c6f4;
+      --gold-ink: #052033;
+      --white: #ffffff;
+      --line: rgba(12, 27, 42, 0.12);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 14px rgba(9, 28, 48, 0.08);
+      --shadow: 0 24px 60px rgba(6, 22, 40, 0.20);
+      --shadow-soft: 0 14px 34px rgba(9, 28, 48, 0.10);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream-2);
       line-height: 1.5;
-      font-size: 1rem;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(53, 198, 244, 0.75); outline-offset: 4px; border-radius: 4px; }
 
-    /* Top bar */
-    .top-bar { background: var(--primary-dark); color: white; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
-    .top-bar-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: var(--transition); }
-    .top-bar-links a:hover { color: white; }
-    .top-bar-actions { display: flex; gap: 1rem; }
-    .top-btn { padding: 0.4rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; }
-    .top-btn.report { background: var(--accent); color: white; }
-    .top-btn.report:hover { background: #d97706; transform: translateY(-1px); }
-    .top-btn.donate { background: white; color: var(--primary); }
-    .top-btn.donate:hover { background: #f1f5f9; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .container-wide { width: min(1360px, calc(100% - 48px)); margin-inline: auto; }
 
-    /* Navbar */
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: var(--transition); }
-    .navbar.scrolled { box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1.5rem; }
-    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 10px; }
-    .brand-text p { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
-    .nav-menu { list-style: none; display: flex; align-items: center; gap: 0.25rem; }
-    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; padding: 0.6rem 1.1rem; border-radius: 40px; transition: var(--transition); }
-    .nav-menu a:hover, .nav-menu a.active { background: var(--bg-light); color: var(--primary); }
-    .mobile-toggle { display: none; background: none; border: 1px solid var(--border); padding: 0.6rem; border-radius: 10px; cursor: pointer; background: white; }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 16, 28, 0.55), rgba(6, 16, 28, 0));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 280ms ease, color 280ms ease, box-shadow 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-    /* Page Hero - lighter blue overlay */
-    .page-hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; min-height: 340px; }
-    .page-hero-slideshow { position: absolute; inset: 0; z-index: 0; }
-    .page-hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; background-size: cover; background-position: center; }
-    .page-hero-slide.active { opacity: 1; }
-    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(30,64,175,0.35) 50%, rgba(59,130,246,0.3) 100%); z-index: 1; }
-    .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; }
-    .page-hero h1 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.5rem); color: white; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.2); }
-    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.6; max-width: 650px; margin: 0 auto 1rem; }
-    .breadcrumb { display: flex; justify-content: center; gap: 0.6rem; align-items: center; color: rgba(255,255,255,0.8); font-size: 0.85rem; }
-    .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition); }
-    .breadcrumb a:hover { color: white; }
+    .site-header.is-scrolled,
+    .site-header.menu-open {
+      background: rgba(246, 249, 252, 0.86);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 8px 30px rgba(9, 28, 48, 0.08);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-    /* Sections */
-    .section { padding: 3rem 0; }
-    .section.soft { background: var(--bg-soft); }
-    .section-header { text-align: center; max-width: 750px; margin: 0 auto 2rem; }
-    .section-header h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); margin-bottom: 0.8rem; color: var(--primary-dark); }
-    .section-header p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .utility {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: border-color 280ms ease;
+    }
 
-    /* Filters */
-    .filters { display: flex; gap: 0.7rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
-    .filter-chip { padding: 0.6rem 1.3rem; border-radius: 999px; border: 1px solid var(--border); background: white; color: var(--text-light); font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: var(--transition); }
-    .filter-chip:hover { border-color: var(--primary-light); color: var(--primary); transform: translateY(-1px); }
-    .filter-chip.active { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; border-color: transparent; box-shadow: 0 2px 8px rgba(30,58,138,0.2); }
+    .site-header.is-scrolled .utility,
+    .site-header.menu-open .utility { border-color: var(--line); }
 
-    /* Program Grid */
-    .program-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
-    .program-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); opacity: 0; transform: translateY(20px); }
-    .program-card.show { opacity: 1; transform: translateY(0); }
-    .program-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(30,58,138,0.15); }
-    .program-image { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
-    .program-image img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-    .program-card:hover .program-image img { transform: scale(1.03); }
-    .program-tag { position: absolute; top: 0.8rem; left: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 999px; background: rgba(255,255,255,0.95); font-weight: 700; font-size: 0.7rem; color: var(--primary); }
+    .utility-inner,
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .utility-inner { min-height: 40px; }
+
+    .utility-links,
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .utility-links { gap: 28px; opacity: 0.85; }
+    .utility-actions { display: flex; align-items: center; gap: 20px; }
+
+    .nav-inner { min-height: 80px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: background 280ms ease;
+    }
+
+    .site-header.is-scrolled .brand-mark,
+    .site-header.menu-open .brand-mark { background: var(--white); }
+
+    .brand-title {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links { gap: 4px; }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 200ms ease, color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-item.has-dropdown .nav-link { padding-right: 10px; }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-right: 4px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .dropdown-toggle i { transition: transform 220ms ease; display: block; }
+    .dropdown-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+    .nav-link:hover,
+    .dropdown-toggle:hover,
+    .dropdown-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.14); }
+
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.menu-open .nav-link:hover,
+    .site-header.is-scrolled .dropdown-toggle:hover,
+    .site-header.menu-open .dropdown-toggle:hover,
+    .site-header.is-scrolled .dropdown-toggle[aria-expanded="true"],
+    .site-header.menu-open .dropdown-toggle[aria-expanded="true"] { background: rgba(18, 74, 128, 0.08); color: var(--green); }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(6, 22, 40, 0.16);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+      z-index: 5;
+    }
+
+    .dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-item.has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .dropdown a:hover { background: var(--cream); color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-left: 6px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), #1fa3e0);
+      color: var(--gold-ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(53, 198, 244, 0.32);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(53, 198, 244, 0.42);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      min-height: 55vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("images/24.jpg") center / cover no-repeat;
+      transform: scale(1.05);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.88) 0%, rgba(6, 22, 40, 0.5) 55%, rgba(6, 22, 40, 0.2) 100%),
+                  linear-gradient(0deg, rgba(5, 16, 28, 0.8) 0%, rgba(6, 22, 40, 0.2) 40%, rgba(6, 22, 40, 0.5) 100%);
+    }
+
+    .page-hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: min(50vw, 600px);
+      aspect-ratio: 1;
+      right: -5%;
+      top: -10%;
+      background: radial-gradient(circle, rgba(53, 198, 244, 0.28), rgba(53, 198, 244, 0) 68%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.05) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-20px, -8px, 0); }
+    }
+
+    .page-hero-content {
+      width: min(800px, 100%);
+      padding: 190px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .page-hero h1,
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 700;
+      background: linear-gradient(100deg, #ffffff 55%, #bfe6fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 0;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--cream-2);
+    }
+
+    .section.alt { background: var(--cream); }
+    .section.green { background: linear-gradient(160deg, var(--green-2), var(--green)); color: var(--white); }
+    .section.compact { padding-block: clamp(60px, 8vw, 90px); }
+
+    .section-kicker {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .green .section-kicker { color: var(--gold); }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .green .section-copy { color: rgba(255, 255, 255, 0.8); }
+
+    .filters {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-chip {
+      padding: 0.6rem 1.3rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink-soft);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 200ms ease;
+    }
+
+    .filter-chip:hover {
+      border-color: var(--leaf);
+      color: var(--green);
+      transform: translateY(-1px);
+    }
+
+    .filter-chip.active {
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(18, 74, 128, 0.25);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .program-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease, opacity 400ms ease, transform 400ms ease;
+    }
+
+    .program-card.hidden {
+      display: none;
+    }
+
+    .program-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .program-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--sage);
+    }
+
+    .program-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms ease;
+    }
+
+    .program-card:hover .program-image img { transform: scale(1.04); }
+
+    .program-tag {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--green);
+      box-shadow: var(--shadow-sm);
+    }
+
     .program-content { padding: 1.5rem; }
-    .program-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: grid; place-items: center; color: white; font-size: 1.1rem; margin-bottom: 1rem; }
-    .program-content h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
-    .program-content p { color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-bottom: 1rem; }
-    .program-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; padding-top: 0.8rem; border-top: 1px solid var(--border); margin-bottom: 1rem; }
-    .meta-item { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--border); font-size: 0.75rem; font-weight: 600; color: var(--text-light); }
-    .meta-item i { color: var(--primary); font-size: 0.7rem; }
-    .program-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); }
-    .program-link:hover { gap: 0.6rem; color: var(--primary-dark); }
 
-    /* Impact Section */
-    .impact-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); padding: 3rem 0; }
-    .impact-section .section-header h2 { color: white; }
-    .impact-section .section-header p { color: rgba(255,255,255,0.85); }
-    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
-    .impact-stat { text-align: center; padding: 1.2rem; border-radius: var(--radius); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); transition: var(--transition); }
-    .impact-stat:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
-    .impact-stat-number { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.8rem; color: white; margin-bottom: 0.3rem; }
-    .impact-stat-label { color: rgba(255,255,255,0.9); font-weight: 600; font-size: 0.85rem; }
+    .program-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(18, 74, 128, 0.12), rgba(53, 198, 244, 0.16));
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
 
-    /* CTA Section */
-    .cta-section { padding: 3rem 0; background: white; }
-    .cta-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; }
-    .cta-box h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.4rem; color: white; margin-bottom: 0.8rem; }
-    .cta-box p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 1.2rem; }
-    .btn { border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 60px; padding: 0.6rem 1.2rem; font-weight: 600; font-size: 0.85rem; transition: var(--transition); }
-    .btn.primary { background: white; color: var(--primary); }
-    .btn.ghost { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: white; }
-    .btn.primary:hover, .btn.ghost:hover { transform: translateY(-2px); }
+    .program-content h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+
+    .program-content p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--line);
+      margin-bottom: 1rem;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 40px;
+      background: var(--cream-2);
+      border: 1px solid var(--line);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .meta-item i { color: var(--leaf); font-size: 0.7rem; }
+
+    .program-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: gap 200ms ease;
+    }
+
+    .program-link:hover { gap: 0.7rem; }
+
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line-light);
+    }
+
+    .stat {
+      padding: 36px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat span { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 340px;
+      display: grid;
+      align-items: end;
+      padding: 64px;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.92), rgba(6, 22, 40, 0.32)), url("images/ngo.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 { max-width: 720px; margin: 0; font-size: clamp(2rem, 4.6vw, 3.8rem); font-family: "Libre Baskerville", Georgia, serif; }
+    .cta-panel p { max-width: 650px; margin: 22px 0 0; color: rgba(255, 255, 255, 0.82); font-size: 1.1rem; }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 26px;
+      border-radius: 60px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease, filter 200ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); box-shadow: 0 16px 34px rgba(53, 198, 244, 0.32); }
+    .btn-primary:hover { filter: brightness(1.06); box-shadow: 0 22px 46px rgba(53, 198, 244, 0.42); }
+    .btn-dark { background: var(--green); color: var(--white); }
+    .btn-dark:hover { background: var(--green-2); box-shadow: 0 14px 30px rgba(18, 74, 128, 0.28); }
 
     /* Footer */
-    .footer { background: #0a1628; color: white; padding: 3rem 0 1.5rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
-    .footer-brand img { height: 52px; background: white; padding: 8px; border-radius: 12px; }
-    .footer-brand-text h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; margin-bottom: 0.2rem; }
-    .footer-brand-text p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
-    .footer h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: white; }
-    .footer ul li { margin-bottom: 0.5rem; list-style: none; }
-    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.4rem; }
-    .footer a:hover { color: white; transform: translateX(3px); }
-    .footer-contact li { display: flex; align-items: start; gap: 0.6rem; color: rgba(255,255,255,0.75); margin-bottom: 0.7rem; font-size: 0.85rem; }
-    .footer-contact i { color: var(--primary-light); margin-top: 0.15rem; }
-    .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; }
-    .social-links a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: grid; place-items: center; color: white; transition: var(--transition); }
-    .social-links a:hover { background: var(--primary-light); transform: translateY(-2px); }
-    .footer-bottom { text-align: center; padding-top: 1rem; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
-
-    /* WhatsApp FAB */
-    .wa-fab { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: white; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 999; transition: var(--transition); text-decoration: none; }
-    .wa-fab:hover { transform: scale(1.05); }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .top-bar { display: none; }
-      .mobile-toggle { display: flex; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; gap: 0.5rem; padding: 1rem; transform: translateY(-150%); transition: 0.25s ease; box-shadow: var(--shadow-lg); border-bottom: 1px solid var(--border); z-index: 999; }
-      .nav-menu.active { transform: translateY(0); }
-      .nav-menu a { width: 100%; text-align: center; }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .footer {
+      background: #061424;
+      color: var(--white);
+      padding: 70px 0 28px;
     }
-    @media (max-width: 640px) {
-      .impact-grid { grid-template-columns: 1fr; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .footer-brand img { width: 48px; height: 48px; padding: 5px; border-radius: 50%; background: var(--white); }
+    .footer-brand strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.1rem; }
+
+    .footer p { color: rgba(255, 255, 255, 0.65); margin: 0; }
+    .footer h3 { margin: 0 0 18px; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-links { flex-direction: column; align-items: flex-start; gap: 12px; list-style: none; display: flex; }
+    .footer-links a, .footer-contact a, .footer-contact span { color: rgba(255, 255, 255, 0.68); transition: color 180ms; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+    .footer-contact { display: grid; gap: 14px; font-style: normal; }
+    .newsletter { display: flex; gap: 8px; margin-top: 24px; }
+    .newsletter input {
+      width: 100%; min-height: 48px; border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 0 16px; color: white; background: rgba(255, 255, 255, 0.08);
+    }
+    .newsletter input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .newsletter button {
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); cursor: pointer;
+    }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.7); transition: 180ms; }
+    .socials a:hover { background: var(--gold); color: var(--gold-ink); transform: translateY(-2px); }
+
+    .wa-fab {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px;
+      display: grid; place-items: center; border-radius: 50%; background: #25d366; color: white;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.35); font-size: 1.6rem;
+    }
+    .wa-fab:hover { transform: translateY(-3px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 100ms; }
+
+    @media (max-width: 1080px) {
+      .nav-links { position: fixed; top: 120px; left: 24px; right: 24px; display: none; padding: 16px; border-radius: var(--radius); background: white; color: var(--ink); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .nav-item { flex-wrap: wrap; }
+      .dropdown { position: static; width: 100%; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; background: transparent; padding: 0 0 0 16px; max-height: 0; overflow: hidden; transition: max-height 260ms ease; }
+      .dropdown.is-open { max-height: 400px; }
+      .dropdown-toggle { order: 2; margin-left: auto; }
+      .nav-link { order: 1; flex: 1; }
+      .menu-toggle { display: flex; }
+      .utility-actions { display: none; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 780px) {
+      .container, .container-wide { width: min(100% - 32px, var(--max)); }
+      .utility { display: none; }
       .program-grid { grid-template-columns: 1fr; }
-      .cta-buttons { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
+      .stats-band { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <ul class="top-bar-links"><li><a href="contactus.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="aboutus.html#faqs">FAQs</a></li></ul>
-        <div class="top-bar-actions"><a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" class="top-btn report"><i class="fab fa-linkedin-in"></i> Follow on LinkedIn</a><a href="donation.html" class="top-btn donate"><i class="fas fa-seedling"></i> Support Our Farms</a></div>
+  <header class="site-header" id="siteHeader">
+    <div class="utility">
+      <div class="container-wide utility-inner">
+        <ul class="utility-links">
+          <li><a href="contactus.html">Contact</a></li>
+          <li><a href="annual-reports.html">Reports</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        <div class="utility-actions">
+          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/254706476939" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </div>
-  </div>
+    <nav class="container-wide nav-inner" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="RigenFarms home">
+        <img class="brand-mark" src="images/logo.png" alt="" />
+        <span>
+          <span class="brand-title">RigenFarms</span>
+          <span class="brand-kicker">Grow smart. Eat well. Live green.</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="aboutus.html">About</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="aboutus.html" role="menuitem">Mission</a>
+            <a href="aboutus.html#team" role="menuitem">Team</a>
+            <a href="impact.html" role="menuitem">Impact</a>
+          </div>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="projects.html">Programs</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Programs menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="projects.html" role="menuitem">Agriculture</a>
+            <a href="projects.html" role="menuitem">School Gardens</a>
+            <a href="memoranda.html" role="menuitem">Resources</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#innovation">Innovation</a></li>
+        <li><a class="nav-link" href="index.html#insights">Insights</a></li>
+        <li><a class="nav-link" href="volunteers.html">Get Involved</a></li>
+        <li><a class="nav-cta" href="donation.html">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="index.html"><img src="images/logo.png" alt="RigenFarms Logo" /><div class="brand-text"><p>GROW • NOURISH • SUSTAIN</p></div></a>
-        <ul class="nav-menu" id="navMenu"><li><a href="index.html">Home</a></li><li><a href="aboutus.html">Who We Are</a></li><li><a href="projects.html" class="active">Our Work</a></li><li><a href="volunteers.html">Get Involved</a></li><li><a href="contactus.html">Contact</a></li></ul>
-        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+  <main>
+    <section class="page-hero" id="top">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero-content reveal is-visible">
+          <span class="eyebrow">Our work in action</span>
+          <h1>Climate-Smart Programs.</h1>
+          <p class="hero-copy">Rooted in education and environmental stewardship, we equip schools and communities with innovative wicking container gardens to improve food security, nutrition, and resilience against climate change.</p>
+        </div>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <section class="page-hero">
-    <div class="page-hero-slideshow">
-      <div class="page-hero-slide active" style="background-image: url('images/24.jpg');"></div>
-      <div class="page-hero-slide" style="background-image: url('images/18.JPG');"></div>
-      <div class="page-hero-slide" style="background-image: url('images/16.jpg');"></div>
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="container"><div class="page-hero-content"><h1>Our Climate-Smart Programs</h1><p>Rooted in education and environmental stewardship, we equip schools and communities with innovative wicking container gardens to improve food security, nutrition, and resilience against climate change.</p><div class="breadcrumb"><a href="index.html">Home</a><span>•</span><span>Programs</span></div></div></div>
-  </section>
+    <section class="section alt">
+      <div class="container">
+        <div style="text-align:center; max-width:700px; margin:0 auto 32px;" class="reveal">
+          <p class="section-kicker">Cultivating resilient communities</p>
+          <h2 class="section-title">Programs that grow lasting change.</h2>
+          <p class="section-copy">Through hands-on training, school partnerships, and community-led initiatives, we transform how people grow food — one wicking bed at a time.</p>
+        </div>
 
-  <section class="section soft">
-    <div class="container">
-      <div class="section-header reveal"><h2>Cultivating Resilient Communities</h2><p>Through hands-on training, school partnerships, and community-led initiatives, we transform how people grow food — one wicking bed at a time.</p></div>
-      <div class="filters">
-        <button class="filter-chip active" data-filter="all">All Programs</button>
-        <button class="filter-chip" data-filter="schools">School Gardens</button>
-        <button class="filter-chip" data-filter="wicking">Wicking Technology</button>
-        <button class="filter-chip" data-filter="community">Community Farms</button>
-        <button class="filter-chip" data-filter="nutrition">Nutrition</button>
-        <button class="filter-chip" data-filter="climate">Climate Resilience</button>
-        <button class="filter-chip" data-filter="youth">Youth Empowerment</button>
+        <div class="filters reveal">
+          <button class="filter-chip active" data-filter="all">All Programs</button>
+          <button class="filter-chip" data-filter="schools">School Gardens</button>
+          <button class="filter-chip" data-filter="wicking">Wicking Technology</button>
+          <button class="filter-chip" data-filter="community">Community Farms</button>
+          <button class="filter-chip" data-filter="nutrition">Nutrition</button>
+          <button class="filter-chip" data-filter="climate">Climate Resilience</button>
+          <button class="filter-chip" data-filter="youth">Youth Empowerment</button>
+        </div>
+
+        <div class="program-grid reveal" id="programGrid">
+          <article class="program-card" data-category="schools">
+            <div class="program-image"><img src="images/24.jpg" alt="School wicking garden" loading="lazy" /><div class="program-tag">Flagship</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-school"></i></div>
+              <h3>School Wicking Garden Program</h3>
+              <p>We partner with primary and secondary schools to install wicking container gardens that serve as living laboratories. Students learn sustainable agriculture while producing fresh vegetables for school meals.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-graduation-cap"></i> 25+ Schools</span><span class="meta-item"><i class="fa-solid fa-carrot"></i> Feeding Programs</span></div>
+              <a href="contactus.html" class="program-link">Bring to your school <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="program-card" data-category="wicking">
+            <div class="program-image"><img src="images/18.JPG" alt="Wicking container technology" loading="lazy" /><div class="program-tag">Innovation</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-fill-drip"></i></div>
+              <h3>Wicking Bed Technology & Training</h3>
+              <p>Our core innovation — wicking container gardens — uses up to 50% less water and boosts yields. We provide DIY workshops, starter kits, and technical support for households and institutions.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-tint"></i> Water-Saving</span><span class="meta-item"><i class="fa-solid fa-tools"></i> Starter Kits</span></div>
+              <a href="contactus.html" class="program-link">Get a starter kit <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="program-card" data-category="community">
+            <div class="program-image"><img src="images/16.jpg" alt="Community food hub" loading="lazy" /><div class="program-tag">Growing</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-people-roof"></i></div>
+              <h3>Community Food Security Hubs</h3>
+              <p>We establish community-managed wicking gardens that serve as local food production centres, improving access to nutritious food and building resilience against supply chain disruptions.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-users"></i> Community-led</span><span class="meta-item"><i class="fa-solid fa-shield-halved"></i> Food Security</span></div>
+              <a href="contactus.html" class="program-link">Start a hub <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="program-card" data-category="nutrition">
+            <div class="program-image"><img src="images/12.jpg" alt="Nutrition and kitchen gardens" loading="lazy" /><div class="program-tag">Essential</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-apple-alt"></i></div>
+              <h3>Nutrition & Kitchen Garden Integration</h3>
+              <p>Combining nutrition education with practical kitchen gardening, we teach families to grow diverse, nutrient-rich vegetables at home to combat malnutrition and improve dietary diversity.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-heartbeat"></i> Nutrition focus</span><span class="meta-item"><i class="fa-solid fa-home"></i> Household level</span></div>
+              <a href="contactus.html" class="program-link">Improve nutrition <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="program-card" data-category="climate">
+            <div class="program-image"><img src="images/7.jpg" alt="Climate resilience training" loading="lazy" /><div class="program-tag">Priority</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+              <h3>Climate Resilience & Water Management</h3>
+              <p>Building adaptive capacity through tree planting, rainwater harvesting, and climate-smart farming techniques that help communities withstand droughts, floods, and unpredictable weather.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-tree"></i> Reforestation</span><span class="meta-item"><i class="fa-solid fa-water"></i> Water harvesting</span></div>
+              <a href="contactus.html" class="program-link">Build resilience <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="program-card" data-category="youth">
+            <div class="program-image"><img src="images/ngo2.jpg" alt="Youth agripreneurship" loading="lazy" /><div class="program-tag">Empowering</div></div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fa-solid fa-seedling"></i></div>
+              <h3>Youth Agripreneurship & Leadership</h3>
+              <p>Empowering young people with skills in sustainable agriculture, business management, and environmental stewardship, creating a new generation of green entrepreneurs and community leaders.</p>
+              <div class="program-meta"><span class="meta-item"><i class="fa-solid fa-user-graduate"></i> Training</span><span class="meta-item"><i class="fa-solid fa-briefcase"></i> Livelihoods</span></div>
+              <a href="contactus.html" class="program-link">Empower youth <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="program-grid" id="programGrid">
-        <article class="program-card" data-category="schools">
-          <div class="program-image"><img src="images/24.jpg" alt="School wicking garden" /><div class="program-tag">Flagship</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-school"></i></div>
-            <h3>School Wicking Garden Program</h3>
-            <p>We partner with primary and secondary schools to install wicking container gardens that serve as living laboratories. Students learn sustainable agriculture while producing fresh vegetables for school meals.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-graduation-cap"></i> 25+ Schools</span><span class="meta-item"><i class="fas fa-carrot"></i> Feeding Programs</span></div>
-            <a href="contactus.html" class="program-link">Bring to your school <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="program-card" data-category="wicking">
-          <div class="program-image"><img src="images/18.JPG" alt="Wicking container technology" /><div class="program-tag">Innovation</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-fill-drip"></i></div>
-            <h3>Wicking Bed Technology & Training</h3>
-            <p>Our core innovation — wicking container gardens — uses up to 50% less water and boosts yields. We provide DIY workshops, starter kits, and technical support for households and institutions.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-tint"></i> Water-Saving</span><span class="meta-item"><i class="fas fa-tools"></i> Starter Kits</span></div>
-            <a href="contactus.html" class="program-link">Get a starter kit <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="program-card" data-category="community">
-          <div class="program-image"><img src="images/16.jpg" alt="Community food hub" /><div class="program-tag">Growing</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-people-roof"></i></div>
-            <h3>Community Food Security Hubs</h3>
-            <p>We establish community-managed wicking gardens that serve as local food production centres, improving access to nutritious food and building resilience against supply chain disruptions.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-users"></i> Community-led</span><span class="meta-item"><i class="fas fa-shield-halved"></i> Food Security</span></div>
-            <a href="contactus.html" class="program-link">Start a hub <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="program-card" data-category="nutrition">
-          <div class="program-image"><img src="images/12.jpg" alt="Nutrition and kitchen gardens" /><div class="program-tag">Essential</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-apple-alt"></i></div>
-            <h3>Nutrition & Kitchen Garden Integration</h3>
-            <p>Combining nutrition education with practical kitchen gardening, we teach families to grow diverse, nutrient-rich vegetables at home to combat malnutrition and improve dietary diversity.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-heartbeat"></i> Nutrition focus</span><span class="meta-item"><i class="fas fa-home"></i> Household level</span></div>
-            <a href="contactus.html" class="program-link">Improve nutrition <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="program-card" data-category="climate">
-          <div class="program-image"><img src="images/7.jpg" alt="Climate resilience training" /><div class="program-tag">Priority</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-cloud-sun-rain"></i></div>
-            <h3>Climate Resilience & Water Management</h3>
-            <p>Building adaptive capacity through tree planting, rainwater harvesting, and climate-smart farming techniques that help communities withstand droughts, floods, and unpredictable weather.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-tree"></i> Reforestation</span><span class="meta-item"><i class="fas fa-water"></i> Water harvesting</span></div>
-            <a href="contactus.html" class="program-link">Build resilience <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="program-card" data-category="youth">
-          <div class="program-image"><img src="images/ngo2.jpg" alt="Youth agripreneurship" /><div class="program-tag">Empowering</div></div>
-          <div class="program-content"><div class="program-icon"><i class="fas fa-seedling"></i></div>
-            <h3>Youth Agripreneurship & Leadership</h3>
-            <p>Empowering young people with skills in sustainable agriculture, business management, and environmental stewardship, creating a new generation of green entrepreneurs and community leaders.</p>
-            <div class="program-meta"><span class="meta-item"><i class="fas fa-user-graduate"></i> Training</span><span class="meta-item"><i class="fas fa-briefcase"></i> Livelihoods</span></div>
-            <a href="contactus.html" class="program-link">Empower youth <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
+    </section>
+
+    <section class="section green compact">
+      <div class="container">
+        <div style="text-align:center; max-width:700px; margin:0 auto 32px;" class="reveal">
+          <p class="section-kicker">Our growing impact</p>
+          <h2 class="section-title">Measurable outcomes.</h2>
+          <p class="section-copy">Powered by community action and climate-smart innovation.</p>
+        </div>
+        <div class="stats-band reveal">
+          <div class="stat"><strong>10,000+</strong><span>Seedlings Distributed</span></div>
+          <div class="stat"><strong>25</strong><span>Schools with Gardens</span></div>
+          <div class="stat"><strong>500+</strong><span>Wicking Beds Installed</span></div>
+          <div class="stat"><strong>30+</strong><span>Active Partnerships</span></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="impact-section"><div class="container"><div class="section-header reveal"><h2 style="color:white;">Our Growing Impact</h2><p style="color:rgba(255,255,255,0.85);">Measurable outcomes powered by community action and climate-smart innovation.</p></div><div class="impact-grid"><div class="impact-stat"><div class="impact-stat-number">10,000+</div><div class="impact-stat-label">Seedlings Distributed</div></div><div class="impact-stat"><div class="impact-stat-number">25</div><div class="impact-stat-label">Schools with Gardens</div></div><div class="impact-stat"><div class="impact-stat-number">500+</div><div class="impact-stat-label">Wicking Beds Installed</div></div><div class="impact-stat"><div class="impact-stat-number">30+</div><div class="impact-stat-label">Active Partnerships</div></div></div></div></section>
-
-  <section class="cta-section"><div class="container"><div class="cta-box"><div class="cta-box-content"><h2>Grow With Us – Cultivate Change</h2><p>Your support helps expand climate-smart agriculture, empower schools, and build resilient communities through innovative wicking gardens.</p><div class="cta-buttons" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;"><a href="donation.html" class="btn primary"><i class="fas fa-heart"></i> Support Our Work</a><a href="volunteers.html" class="btn ghost"><i class="fas fa-hands-helping"></i> Volunteer With Us</a></div></div></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="section-kicker">Grow with us</p>
+            <h2>Cultivate change in your community.</h2>
+            <p>Your support helps expand climate-smart agriculture, empower schools, and build resilient communities through innovative wicking gardens.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="donation.html">Support our work <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-dark" href="volunteers.html">Volunteer with us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img src="images/logo.png" alt="RigenFarms Logo" />
-            <div>
-              <h5 style="margin:0;">RigenFarms</h5>
-              <p style="font-size:0.75rem;">Grow · Nourish · Sustain</p>
-            </div>
+            <img src="images/logo.png" alt="" />
+            <div><strong>RigenFarms</strong><span>Grow smart. Eat well.</span></div>
           </div>
-          <p style="font-size:0.85rem; line-height:1.6;">A community-driven initiative promoting climate-smart agriculture through innovative wicking container gardening, empowering schools and communities for a food-secure, resilient future.</p>
-
-          <div class="social-links">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/254797680921" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <p>Empowering schools and communities with climate‑smart wicking container gardening to build food security and resilience across Kenya.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
-
         <div>
-          <h5>Quick Links</h5>
-          <ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="projects.html">Our Work</a></li><li><a href="volunteers.html">Get Involved</a></li><li><a href="contactus.html">Contact</a></li></ul>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="projects.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+          </ul>
         </div>
-
         <div>
-          <h5>Resources</h5>
-          <ul><li><a href="projects.html">Our Programs</a></li><li><a href="volunteers.html">Volunteer</a></li><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="memoranda.html">Gardening Guides</a></li><li><a href="donation.html">Donate</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="annual-reports.html">Reports</a></li>
+            <li><a href="memoranda.html">Guides</a></li>
+            <li><a href="donation.html">Donate</a></li>
+          </ul>
         </div>
-
         <div>
-          <h5>Contact</h5>
-          <ul class="footer-contact"><li><i class="fas fa-envelope"></i><span>info@rigenfarms.org</span></li><li><i class="fas fa-phone"></i><span>+254 797 680921<br>+254 792 594021</span></li><li><i class="fas fa-map-marker-alt"></i><span>Kisumu, Kenya</span></li></ul>
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <a href="mailto:rigenfarms@gmail.com">rigenfarms@gmail.com</a>
+            <a href="tel:+254706476939">+254 706 476 939</a>
+            <span>Kisumu, Kenya</span>
+          </address>
+          <form class="newsletter">
+            <input type="email" placeholder="Email updates" />
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
-
-      <div class="footer-bottom"><p>&copy; <span id="year"></span> RigenFarms. All Rights Reserved. Rooted in Education and Environmental Stewardship.</p></div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> RigenFarms.</span>
+        <span><a href="privacy.html">Privacy Policy</a></span>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/254797680921?text=Hello%20RigenFarms" class="wa-fab" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a class="wa-fab" href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    let currentSlide = 0; const slides = document.querySelectorAll('.page-hero-slide');
-    if (slides.length > 1) setInterval(() => { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }, 5000);
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    const mobileToggle = document.getElementById('mobileToggle'), navMenu = document.getElementById('navMenu'), navbar = document.getElementById('navbar');
-    mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); const icon = mobileToggle.querySelector('i'); icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); });
-    document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) navMenu.classList.remove('active'); });
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+    function updateHeader() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
 
-    const filterChips = document.querySelectorAll('.filter-chip'), programCards = document.querySelectorAll('.program-card');
-    function showWithAnimation(cards) { cards.forEach((card, index) => { card.classList.remove('show'); card.style.display = 'block'; setTimeout(() => card.classList.add('show'), 50 + (index * 80)); }); }
-    function filterPrograms(category) { programCards.forEach(card => { const shouldShow = category === 'all' || card.dataset.category === category; if (!shouldShow) { card.classList.remove('show'); card.style.display = 'none'; } }); const visibleCards = Array.from(programCards).filter(card => category === 'all' || card.dataset.category === category); showWithAnimation(visibleCards); }
-    filterChips.forEach(chip => { chip.addEventListener('click', () => { filterChips.forEach(c => c.classList.remove('active')); chip.classList.add('active'); filterPrograms(chip.dataset.filter); }); });
-    filterPrograms('all');
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      if (!isOpen) closeAllDropdowns();
+    });
 
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
-    revealElements.forEach(el => observer.observe(el));
+    navLinks.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && !e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      } else if (link && e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+
+    const dropdownToggles = Array.from(document.querySelectorAll(".dropdown-toggle"));
+
+    function closeAllDropdowns(except) {
+      dropdownToggles.forEach((btn) => {
+        if (btn === except) return;
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.classList.remove("is-open");
+      });
+    }
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        const willOpen = btn.getAttribute("aria-expanded") !== "true";
+        closeAllDropdowns(btn);
+        btn.setAttribute("aria-expanded", String(willOpen));
+        dropdown.classList.toggle("is-open", willOpen);
+      });
+    });
+
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        dropdownToggles.forEach((btn) => { if (document.activeElement === btn.nextElementSibling) btn.focus(); });
+      }
+    });
+    document.querySelectorAll(".dropdown").forEach((d) => d.addEventListener("click", (e) => e.stopPropagation()));
+    document.querySelector(".newsletter")?.addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.reset(); });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
+
+    /* Filter logic */
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const programCards = document.querySelectorAll('.program-card');
+
+    function filterPrograms(category) {
+      programCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        filterPrograms(chip.dataset.filter);
+      });
+    });
   </script>
 </body>
 </html>

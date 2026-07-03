@@ -3,390 +3,1028 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Get Involved - RigenFarms | Grow With Us</title>
+  <title>Get Involved — RigenFarms | Grow With Us</title>
   <meta name="description" content="Join RigenFarms in advancing climate-smart agriculture, wicking container gardening, and school food security. Volunteer, partner, or support our mission for resilient communities." />
-  <link rel="icon" href="images/logo.png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     :root {
-      --primary: #1e3a8a;
-      --primary-light: #3b82f6;
-      --primary-dark: #1e40af;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --text: #1e293b;
-      --text-light: #334155;
-      --text-muted: #475569;
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.2s ease;
+      --ink: #0c1b2a;
+      --ink-soft: #33495f;
+      --muted: #5a7189;
+      --cream: #eef3fa;
+      --cream-2: #f6f9fc;
+      --sage: #d7e6f6;
+      --green: #124a80;
+      --green-2: #0b3560;
+      --leaf: #4f97d8;
+      --gold: #35c6f4;
+      --gold-ink: #052033;
+      --white: #ffffff;
+      --line: rgba(12, 27, 42, 0.12);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 14px rgba(9, 28, 48, 0.08);
+      --shadow: 0 24px 60px rgba(6, 22, 40, 0.20);
+      --shadow-soft: 0 14px 34px rgba(9, 28, 48, 0.10);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream-2);
       line-height: 1.5;
-      font-size: 1rem;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(53, 198, 244, 0.75); outline-offset: 4px; border-radius: 4px; }
 
-    .top-bar { background: var(--primary-dark); color: white; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
-    .top-bar-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: var(--transition); }
-    .top-bar-links a:hover { color: white; }
-    .top-bar-actions { display: flex; gap: 1rem; }
-    .top-btn { padding: 0.4rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; }
-    .top-btn.report { background: var(--accent); color: white; }
-    .top-btn.report:hover { background: #d97706; transform: translateY(-1px); }
-    .top-btn.donate { background: white; color: var(--primary); }
-    .top-btn.donate:hover { background: #f1f5f9; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .container-wide { width: min(1360px, calc(100% - 48px)); margin-inline: auto; }
 
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: var(--transition); }
-    .navbar.scrolled { box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1.5rem; }
-    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 10px; }
-    .brand-text p { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
-    .nav-menu { list-style: none; display: flex; align-items: center; gap: 0.25rem; }
-    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; padding: 0.6rem 1.1rem; border-radius: 40px; transition: var(--transition); }
-    .nav-menu a:hover, .nav-menu a.active { background: var(--bg-light); color: var(--primary); }
-    .mobile-toggle { display: none; background: none; border: 1px solid var(--border); padding: 0.6rem; border-radius: 10px; cursor: pointer; background: white; }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 16, 28, 0.55), rgba(6, 16, 28, 0));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 280ms ease, color 280ms ease, box-shadow 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-    .page-hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; min-height: 380px; }
-    .page-hero-slideshow { position: absolute; inset: 0; z-index: 0; }
-    .page-hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; background-size: cover; background-position: center; }
-    .page-hero-slide.active { opacity: 1; }
-    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.45) 0%, rgba(30, 64, 175, 0.4) 50%, rgba(59, 130, 246, 0.35) 100%); z-index: 1; }
-    .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; }
-    .page-hero h1 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.5rem); color: white; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.25); }
-    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.6; max-width: 650px; margin: 0 auto 1.5rem; }
-    .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .site-header.is-scrolled,
+    .site-header.menu-open {
+      background: rgba(246, 249, 252, 0.86);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 8px 30px rgba(9, 28, 48, 0.08);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-    .section { padding: 3rem 0; }
-    .section.soft { background: var(--bg-soft); }
-    .section-header { text-align: center; max-width: 750px; margin: 0 auto 2rem; }
-    .section-header h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); margin-bottom: 0.8rem; color: var(--primary-dark); }
-    .section-header p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .utility {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: border-color 280ms ease;
+    }
 
-    .ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-    .way-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; overflow: hidden; }
-    .way-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); transform: scaleX(0); transform-origin: left; transition: var(--transition); }
-    .way-card:hover::before { transform: scaleX(1); }
-    .way-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(30, 58, 138, 0.15); }
-    .way-icon { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: grid; place-items: center; color: white; font-size: 1.2rem; margin-bottom: 1rem; }
-    .way-card h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
-    .way-card p { color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-bottom: 1rem; }
+    .site-header.is-scrolled .utility,
+    .site-header.menu-open .utility { border-color: var(--line); }
+
+    .utility-inner,
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .utility-inner { min-height: 40px; }
+
+    .utility-links,
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .utility-links { gap: 28px; opacity: 0.85; }
+    .utility-actions { display: flex; align-items: center; gap: 20px; }
+
+    .nav-inner { min-height: 80px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: background 280ms ease;
+    }
+
+    .site-header.is-scrolled .brand-mark,
+    .site-header.menu-open .brand-mark { background: var(--white); }
+
+    .brand-title {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links { gap: 4px; }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 200ms ease, color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-item.has-dropdown .nav-link { padding-right: 10px; }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-right: 4px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .dropdown-toggle i { transition: transform 220ms ease; display: block; }
+    .dropdown-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+    .nav-link:hover,
+    .dropdown-toggle:hover,
+    .dropdown-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.14); }
+
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.menu-open .nav-link:hover,
+    .site-header.is-scrolled .dropdown-toggle:hover,
+    .site-header.menu-open .dropdown-toggle:hover,
+    .site-header.is-scrolled .dropdown-toggle[aria-expanded="true"],
+    .site-header.menu-open .dropdown-toggle[aria-expanded="true"] { background: rgba(18, 74, 128, 0.08); color: var(--green); }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(6, 22, 40, 0.16);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+      z-index: 5;
+    }
+
+    .dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-item.has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .dropdown a:hover { background: var(--cream); color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-left: 6px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), #1fa3e0);
+      color: var(--gold-ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(53, 198, 244, 0.32);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(53, 198, 244, 0.42);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      min-height: 55vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("images/walter.jpeg") center / cover no-repeat;
+      transform: scale(1.05);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.88) 0%, rgba(6, 22, 40, 0.5) 55%, rgba(6, 22, 40, 0.2) 100%),
+                  linear-gradient(0deg, rgba(5, 16, 28, 0.8) 0%, rgba(6, 22, 40, 0.2) 40%, rgba(6, 22, 40, 0.5) 100%);
+    }
+
+    .page-hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: min(50vw, 600px);
+      aspect-ratio: 1;
+      right: -5%;
+      top: -10%;
+      background: radial-gradient(circle, rgba(53, 198, 244, 0.28), rgba(53, 198, 244, 0) 68%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.05) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-20px, -8px, 0); }
+    }
+
+    .page-hero-content {
+      width: min(800px, 100%);
+      padding: 190px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .page-hero h1,
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 700;
+      background: linear-gradient(100deg, #ffffff 55%, #bfe6fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 0;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--cream-2);
+    }
+
+    .section.alt { background: var(--cream); }
+    .section.green { background: linear-gradient(160deg, var(--green-2), var(--green)); color: var(--white); }
+
+    .section-kicker {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .green .section-kicker { color: var(--gold); }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .green .section-copy { color: rgba(255, 255, 255, 0.8); }
+
+    .ways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .way-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .way-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .way-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(18, 74, 128, 0.12), rgba(53, 198, 244, 0.16));
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .way-card h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+
+    .way-card p { color: var(--muted); line-height: 1.7; font-size: 0.9rem; margin-bottom: 1.2rem; }
+
     .way-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
-    .way-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.8rem; text-decoration: none; transition: var(--transition); }
-    .way-btn.primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; }
-    .way-btn.primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-    .way-btn.ghost { background: var(--bg-soft); color: var(--text-light); border: 1px solid var(--border); }
-    .way-btn.ghost:hover { background: white; border-color: var(--primary-light); color: var(--primary); transform: translateY(-2px); }
 
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .team-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
-    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .team-image { height: 260px; overflow: hidden; background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
-    .team-image img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-    .team-card:hover .team-image img { transform: scale(1.03); }
-    .team-content { padding: 1.2rem; }
-    .team-content h4 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
-    .team-role { color: var(--primary); font-weight: 600; font-size: 0.8rem; margin-bottom: 0.6rem; }
-    .team-quote { color: var(--text-muted); line-height: 1.5; font-size: 0.85rem; font-style: italic; border-left: 2px solid var(--primary); padding-left: 0.8rem; margin-bottom: 0.6rem; }
-    .team-location { display: flex; align-items: center; gap: 0.4rem; color: var(--text-light); font-size: 0.75rem; font-weight: 500; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: 60px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease, filter 200ms ease;
+      cursor: pointer;
+    }
 
-    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .benefit-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; transition: var(--transition); }
-    .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .benefit-icon { width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: grid; place-items: center; color: white; font-size: 1.2rem; margin: 0 auto 1rem; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary-sm { background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); box-shadow: 0 10px 24px rgba(53, 198, 244, 0.25); }
+    .btn-primary-sm:hover { filter: brightness(1.06); box-shadow: 0 16px 34px rgba(53, 198, 244, 0.38); }
+    .btn-outline-sm { border-color: var(--line); color: var(--ink-soft); background: transparent; }
+    .btn-outline-sm:hover { border-color: var(--green); color: var(--green); background: rgba(18, 74, 128, 0.05); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); box-shadow: 0 16px 34px rgba(53, 198, 244, 0.32); min-height: 52px; padding: 0 26px; }
+    .btn-primary:hover { filter: brightness(1.06); box-shadow: 0 22px 46px rgba(53, 198, 244, 0.42); }
+    .btn-dark { background: var(--green); color: var(--white); }
+    .btn-dark:hover { background: var(--green-2); box-shadow: 0 14px 30px rgba(18, 74, 128, 0.28); }
+    .btn-ghost { border-color: rgba(255, 255, 255, 0.45); color: var(--white); background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(4px); }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.15); border-color: var(--white); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .team-image {
+      height: 260px;
+      overflow: hidden;
+      background: var(--sage);
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms ease;
+    }
+
+    .team-card:hover .team-image img { transform: scale(1.04); }
+
+    .team-content { padding: 1.5rem; }
+
+    .team-content h4 { font-family: "Libre Baskerville", Georgia, serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+
+    .team-role { color: var(--leaf); font-weight: 700; font-size: 0.8rem; margin-bottom: 0.8rem; }
+
+    .team-quote {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.85rem;
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .team-location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--ink-soft);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(18, 74, 128, 0.12), rgba(53, 198, 244, 0.16));
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 1.3rem;
+      margin: 0 auto 1.2rem;
+    }
+
     .benefit-card h5 { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
-    .benefit-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; }
+    .benefit-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
 
-    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); padding: 3rem 0; text-align: center; }
-    .cta-section h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.4rem; color: white; margin-bottom: 0.8rem; }
-    .cta-section p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 1.2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-
-    .btn { border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 60px; padding: 0.6rem 1.2rem; font-weight: 600; font-size: 0.85rem; transition: var(--transition); }
-    .btn.primary { background: white; color: var(--primary); }
-    .btn.ghost { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: white; }
-    .btn.primary:hover, .btn.ghost:hover { transform: translateY(-2px); }
-
-    .footer { background: #0a1628; color: white; padding: 3rem 0 1.5rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
-    .footer-brand img { height: 52px; background: white; padding: 8px; border-radius: 12px; }
-    .footer-brand-text h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; margin-bottom: 0.2rem; }
-    .footer-brand-text p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
-    .footer h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: white; }
-    .footer ul li { margin-bottom: 0.5rem; list-style: none; }
-    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.4rem; }
-    .footer a:hover { color: white; transform: translateX(3px); }
-    .footer-contact li { display: flex; align-items: start; gap: 0.6rem; color: rgba(255,255,255,0.75); margin-bottom: 0.7rem; font-size: 0.85rem; }
-    .footer-contact i { color: var(--primary-light); margin-top: 0.15rem; }
-    .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; }
-    .social-links a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: grid; place-items: center; color: white; transition: var(--transition); }
-    .social-links a:hover { background: var(--primary-light); transform: translateY(-2px); }
-    .footer-bottom { text-align: center; padding-top: 1rem; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
-
-    .wa-fab { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: white; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 999; transition: var(--transition); text-decoration: none; }
-    .wa-fab:hover { transform: scale(1.05); }
-
-    @media (max-width: 1024px) {
-      .top-bar { display: none; }
-      .mobile-toggle { display: flex; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; gap: 0.5rem; padding: 1rem; transform: translateY(-150%); transition: 0.25s ease; box-shadow: var(--shadow-lg); border-bottom: 1px solid var(--border); z-index: 999; }
-      .nav-menu.active { transform: translateY(0); }
-      .nav-menu a { width: 100%; text-align: center; }
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 340px;
+      display: grid;
+      align-items: end;
+      padding: 64px;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.92), rgba(6, 22, 40, 0.32)), url("images/ngo.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
     }
-    @media (max-width: 640px) {
-      .hero-actions, .way-actions { flex-direction: column; }
-      .btn, .way-btn { width: 100%; justify-content: center; }
+
+    .cta-panel h2 { max-width: 720px; margin: 0; font-size: clamp(2rem, 4.6vw, 3.8rem); font-family: "Libre Baskerville", Georgia, serif; }
+    .cta-panel p { max-width: 650px; margin: 22px 0 0; color: rgba(255, 255, 255, 0.82); font-size: 1.1rem; }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 38px;
     }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    .footer {
+      background: #061424;
+      color: var(--white);
+      padding: 70px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .footer-brand img { width: 48px; height: 48px; padding: 5px; border-radius: 50%; background: var(--white); }
+    .footer-brand strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.1rem; }
+
+    .footer p { color: rgba(255, 255, 255, 0.65); margin: 0; }
+    .footer h3 { margin: 0 0 18px; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-links { flex-direction: column; align-items: flex-start; gap: 12px; list-style: none; display: flex; }
+    .footer-links a, .footer-contact a, .footer-contact span { color: rgba(255, 255, 255, 0.68); transition: color 180ms; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+    .footer-contact { display: grid; gap: 14px; font-style: normal; }
+    .newsletter { display: flex; gap: 8px; margin-top: 24px; }
+    .newsletter input {
+      width: 100%; min-height: 48px; border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 0 16px; color: white; background: rgba(255, 255, 255, 0.08);
+    }
+    .newsletter input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .newsletter button {
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); cursor: pointer;
+    }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.7); transition: 180ms; }
+    .socials a:hover { background: var(--gold); color: var(--gold-ink); transform: translateY(-2px); }
+
+    .wa-fab {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px;
+      display: grid; place-items: center; border-radius: 50%; background: #25d366; color: white;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.35); font-size: 1.6rem;
+    }
+    .wa-fab:hover { transform: translateY(-3px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 100ms; } .delay-2 { transition-delay: 200ms; }
+
+    @media (max-width: 1080px) {
+      .nav-links { position: fixed; top: 120px; left: 24px; right: 24px; display: none; padding: 16px; border-radius: var(--radius); background: white; color: var(--ink); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .nav-item { flex-wrap: wrap; }
+      .dropdown { position: static; width: 100%; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; background: transparent; padding: 0 0 0 16px; max-height: 0; overflow: hidden; transition: max-height 260ms ease; }
+      .dropdown.is-open { max-height: 400px; }
+      .dropdown-toggle { order: 2; margin-left: auto; }
+      .nav-link { order: 1; flex: 1; }
+      .menu-toggle { display: flex; }
+      .utility-actions { display: none; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 780px) {
+      .container, .container-wide { width: min(100% - 32px, var(--max)); }
+      .utility { display: none; }
+      .ways-grid, .team-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
-
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <ul class="top-bar-links"><li><a href="contactus.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="aboutus.html#faqs">FAQs</a></li></ul>
-        <div class="top-bar-actions"><a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" class="top-btn report"><i class="fab fa-linkedin-in"></i> Follow on LinkedIn</a><a href="donation.html" class="top-btn donate"><i class="fas fa-seedling"></i> Support Our Farms</a></div>
-      </div>
-    </div>
-  </div>
-
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="index.html"><img src="images/logo.png" alt="RigenFarms Logo" /><div class="brand-text"><p>GROW • NOURISH • SUSTAIN</p></div></a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutus.html">Who We Are</a></li>
-          <li><a href="projects.html">Our Work</a></li>
-          <li><a href="volunteers.html" class="active">Get Involved</a></li>
+  <header class="site-header" id="siteHeader">
+    <div class="utility">
+      <div class="container-wide utility-inner">
+        <ul class="utility-links">
           <li><a href="contactus.html">Contact</a></li>
+          <li><a href="annual-reports.html">Reports</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
-        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="page-hero-slideshow">
-      <div class="page-hero-slide active" style="background-image: url('images/walter.jpeg');"></div>
-      <div class="page-hero-slide" style="background-image: url('images/ken.jpeg');"></div>
-      <div class="page-hero-slide" style="background-image: url('images/kahkiti.jpg');"></div>
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <h1>Grow With Us</h1>
-        <p>Join a community-powered movement advancing climate‑smart agriculture, wicking container gardens, and food security in schools and neighbourhoods across Kenya.</p>
-        <div class="hero-actions">
-          <a href="volunteersForm.html" class="btn primary"><i class="fas fa-user-plus"></i> Volunteer Now</a>
-          <a href="donation.html" class="btn ghost"><i class="fas fa-heart"></i> Donate</a>
-          <a href="contactus.html" class="btn ghost"><i class="fas fa-handshake"></i> Partner</a>
+        <div class="utility-actions">
+          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/254706476939" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </div>
-  </section>
+    <nav class="container-wide nav-inner" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="RigenFarms home">
+        <img class="brand-mark" src="images/logo.png" alt="" />
+        <span>
+          <span class="brand-title">RigenFarms</span>
+          <span class="brand-kicker">Grow smart. Eat well. Live green.</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="aboutus.html">About</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="aboutus.html" role="menuitem">Mission</a>
+            <a href="aboutus.html#team" role="menuitem">Team</a>
+            <a href="impact.html" role="menuitem">Impact</a>
+          </div>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="projects.html">Programs</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Programs menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="projects.html" role="menuitem">Agriculture</a>
+            <a href="projects.html" role="menuitem">School Gardens</a>
+            <a href="memoranda.html" role="menuitem">Resources</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#innovation">Innovation</a></li>
+        <li><a class="nav-link" href="index.html#insights">Insights</a></li>
+        <li><a class="nav-link" href="volunteers.html">Get Involved</a></li>
+        <li><a class="nav-cta" href="donation.html">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="section soft">
-    <div class="container">
-      <div class="section-header reveal"><h2>Ways to Make a Difference</h2><p>Whether you're a student, professional, farmer, or simply passionate about sustainable food systems, there's a place for you in the RigenFarms family.</p></div>
-      <div class="ways-grid">
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-seedling"></i></div><h3>Volunteer on a Farm</h3><p>Get your hands in the soil — help build wicking beds, plant vegetables, and support school or community gardens in your area.</p><div class="way-actions"><a href="volunteersForm.html" class="way-btn primary">Join as Volunteer</a><a href="contactus.html" class="way-btn ghost">Ask a Question</a></div></div>
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-school"></i></div><h3>Partner With a School</h3><p>Sponsor a wicking garden programme at a local primary or secondary school, providing fresh vegetables and hands‑on learning for students.</p><div class="way-actions"><a href="contactus.html" class="way-btn primary">Explore Partnerships</a><a href="projects.html" class="way-btn ghost">View Programmes</a></div></div>
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-heart"></i></div><h3>Support a Wicking Garden</h3><p>Your donation equips families and institutions with water‑efficient container gardens, fighting hunger and building climate resilience.</p><div class="way-actions"><a href="donation.html" class="way-btn primary">Make a Donation</a><a href="contactus.html" class="way-btn ghost">Sponsorship</a></div></div>
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-user-graduate"></i></div><h3>Youth Agripreneurship</h3><p>Young people gain practical skills in sustainable agriculture, business management, and environmental stewardship through our mentorship programme.</p><div class="way-actions"><a href="contactus.html" class="way-btn primary">Apply for Internship</a><a href="contactus.html" class="way-btn ghost">Requirements</a></div></div>
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-bullhorn"></i></div><h3>Advocate for Climate Action</h3><p>Join campaigns promoting water‑wise farming, tree planting, and policies that support smallholder farmers and food sovereignty.</p><div class="way-actions"><a href="contactus.html" class="way-btn primary">Join a Campaign</a><a href="projects.html" class="way-btn ghost">Learn More</a></div></div>
-        <div class="way-card reveal"><div class="way-icon"><i class="fas fa-share-nodes"></i></div><h3>Spread the Word</h3><p>Share our story, host a community garden day, and connect us with organisations aligned with climate‑smart food systems.</p><div class="way-actions"><a href="contactus.html" class="way-btn primary">Share Our Mission</a><a href="aboutus.html" class="way-btn ghost">About RigenFarms</a></div></div>
+  <main>
+    <section class="page-hero" id="top">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero-content reveal is-visible">
+          <span class="eyebrow">Join the movement</span>
+          <h1>Grow With Us.</h1>
+          <p class="hero-copy">Join a community-powered movement advancing climate‑smart agriculture, wicking container gardens, and food security in schools and neighbourhoods across Kenya.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal"><h2>Meet the RigenFarms Crew</h2><p>Passionate growers, educators, and community organisers rooted in the belief that every seed holds possibility.</p></div>
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-image"><img src="images/walter.jpeg" alt="Walter Tito" /></div>
-          <div class="team-content">
-            <h4>Walter Tito</h4>
-            <div class="team-role">CEO & Founder</div>
-            <div class="team-quote">"Building a food-secure Kenya starts with bold vision, community trust, and the willingness to get your hands dirty."</div>
-            <div class="team-location"><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya</div>
+    <section class="section alt" id="ways">
+      <div class="container">
+        <div style="text-align:center; max-width:700px; margin:0 auto 48px;" class="reveal">
+          <p class="section-kicker">Ways to make a difference</p>
+          <h2 class="section-title">There's a place for you.</h2>
+          <p class="section-copy">Whether you're a student, professional, farmer, or simply passionate about sustainable food systems, there's a place for you in the RigenFarms family.</p>
+        </div>
+        <div class="ways-grid">
+          <div class="way-card reveal">
+            <div class="way-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Volunteer on a Farm</h3>
+            <p>Get your hands in the soil — help build wicking beds, plant vegetables, and support school or community gardens in your area.</p>
+            <div class="way-actions"><a href="volunteers.html" class="btn btn-primary-sm">Join as Volunteer</a><a href="contactus.html" class="btn btn-outline-sm">Ask a Question</a></div>
+          </div>
+          <div class="way-card reveal delay-1">
+            <div class="way-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Partner With a School</h3>
+            <p>Sponsor a wicking garden programme at a local primary or secondary school, providing fresh vegetables and hands‑on learning for students.</p>
+            <div class="way-actions"><a href="contactus.html" class="btn btn-primary-sm">Explore Partnerships</a><a href="projects.html" class="btn btn-outline-sm">View Programmes</a></div>
+          </div>
+          <div class="way-card reveal delay-2">
+            <div class="way-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3>Support a Wicking Garden</h3>
+            <p>Your donation equips families and institutions with water‑efficient container gardens, fighting hunger and building climate resilience.</p>
+            <div class="way-actions"><a href="donation.html" class="btn btn-primary-sm">Make a Donation</a><a href="contactus.html" class="btn btn-outline-sm">Sponsorship</a></div>
+          </div>
+          <div class="way-card reveal">
+            <div class="way-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <h3>Youth Agripreneurship</h3>
+            <p>Young people gain practical skills in sustainable agriculture, business management, and environmental stewardship through our mentorship programme.</p>
+            <div class="way-actions"><a href="contactus.html" class="btn btn-primary-sm">Apply for Internship</a><a href="contactus.html" class="btn btn-outline-sm">Requirements</a></div>
+          </div>
+          <div class="way-card reveal delay-1">
+            <div class="way-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3>Advocate for Climate Action</h3>
+            <p>Join campaigns promoting water‑wise farming, tree planting, and policies that support smallholder farmers and food sovereignty.</p>
+            <div class="way-actions"><a href="contactus.html" class="btn btn-primary-sm">Join a Campaign</a><a href="projects.html" class="btn btn-outline-sm">Learn More</a></div>
+          </div>
+          <div class="way-card reveal delay-2">
+            <div class="way-icon"><i class="fa-solid fa-share-nodes"></i></div>
+            <h3>Spread the Word</h3>
+            <p>Share our story, host a community garden day, and connect us with organisations aligned with climate‑smart food systems.</p>
+            <div class="way-actions"><a href="contactus.html" class="btn btn-primary-sm">Share Our Mission</a><a href="aboutus.html" class="btn btn-outline-sm">About RigenFarms</a></div>
           </div>
         </div>
-        <div class="team-card reveal">
-          <div class="team-image"><img src="images/kahkiti.jpg" alt="Khakiti Mercy" /></div>
-          <div class="team-content">
-            <h4>Khakiti Mercy</h4>
-            <div class="team-role">Co-Founder</div>
-            <div class="team-quote">"Every garden we plant is a declaration that communities can lead their own transformation."</div>
-            <div class="team-location"><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya</div>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-image"><img src="images/christopher.jpg" alt="Christopher Onyango" /></div>
-          <div class="team-content">
-            <h4>Christopher Onyango</h4>
-            <div class="team-role">Lead Environmental Ecologist</div>
-            <div class="team-quote">"Healthy ecosystems and thriving communities are inseparable — nurture one and you nurture both."</div>
-            <div class="team-location"><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya</div>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-image"><img src="images/ken.jpeg" alt="Kennedy Shitawa" /></div>
-          <div class="team-content">
-            <h4>Kennedy Shitawa</h4>
-            <div class="team-role">Finance & Operations</div>
-            <div class="team-quote">"Sustainable impact grows from transparent systems and faithful stewardship of every coin."</div>
-            <div class="team-location"><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya</div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section soft">
-    <div class="container">
-      <div class="section-header reveal"><h2>Why Grow With RigenFarms?</h2><p>Meaningful experiences, real-world skills, and a community of people turning climate challenges into green solutions.</p></div>
-      <div class="benefits-grid">
-        <div class="benefit-card reveal"><div class="benefit-icon"><i class="fas fa-leaf"></i></div><h5>Grow Real Impact</h5><p>Help install wicking beds that save water, boost yields, and put fresh food on school and family tables.</p></div>
-        <div class="benefit-card reveal"><div class="benefit-icon"><i class="fas fa-tools"></i></div><h5>Build Hands‑On Skills</h5><p>Learn climate‑smart techniques, composting, water management, and agri‑business – skills you can use anywhere.</p></div>
-        <div class="benefit-card reveal"><div class="benefit-icon"><i class="fas fa-people-arrows"></i></div><h5>Expand Your Network</h5><p>Connect with farmers, educators, environmentalists, and youth leaders passionate about food security.</p></div>
-        <div class="benefit-card reveal"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h5>Grow Your Career</h5><p>Gain practical experience, mentorship, and references that open doors in agriculture, development, and beyond.</p></div>
+    <section class="section" id="team">
+      <div class="container">
+        <div style="text-align:center; max-width:700px; margin:0 auto 48px;" class="reveal">
+          <p class="section-kicker">Meet the crew</p>
+          <h2 class="section-title">Passionate growers & educators.</h2>
+          <p class="section-copy">Rooted in the belief that every seed holds possibility.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal">
+            <div class="team-image"><img src="images/walter.jpeg" alt="Walter Tito" loading="lazy" /></div>
+            <div class="team-content">
+              <h4>Walter Tito</h4>
+              <div class="team-role">CEO & Founder</div>
+              <div class="team-quote">"Building a food-secure Kenya starts with bold vision, community trust, and the willingness to get your hands dirty."</div>
+              <div class="team-location"><i class="fa-solid fa-location-dot"></i> Kisumu, Kenya</div>
+            </div>
+          </div>
+          <div class="team-card reveal delay-1">
+            <div class="team-image"><img src="images/kahkiti.jpg" alt="Khakiti Mercy" loading="lazy" /></div>
+            <div class="team-content">
+              <h4>Khakiti Mercy</h4>
+              <div class="team-role">Co-Founder</div>
+              <div class="team-quote">"Every garden we plant is a declaration that communities can lead their own transformation."</div>
+              <div class="team-location"><i class="fa-solid fa-location-dot"></i> Kisumu, Kenya</div>
+            </div>
+          </div>
+          <div class="team-card reveal delay-2">
+            <div class="team-image"><img src="images/christopher.jpg" alt="Christopher Onyango" loading="lazy" /></div>
+            <div class="team-content">
+              <h4>Christopher Onyango</h4>
+              <div class="team-role">Lead Environmental Ecologist</div>
+              <div class="team-quote">"Healthy ecosystems and thriving communities are inseparable — nurture one and you nurture both."</div>
+              <div class="team-location"><i class="fa-solid fa-location-dot"></i> Kisumu, Kenya</div>
+            </div>
+          </div>
+          <div class="team-card reveal delay-3">
+            <div class="team-image"><img src="images/ken.jpeg" alt="Kennedy Shitawa" loading="lazy" /></div>
+            <div class="team-content">
+              <h4>Kennedy Shitawa</h4>
+              <div class="team-role">Finance & Operations</div>
+              <div class="team-quote">"Sustainable impact grows from transparent systems and faithful stewardship of every coin."</div>
+              <div class="team-location"><i class="fa-solid fa-location-dot"></i> Kisumu, Kenya</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Dig In?</h2>
-      <p>Join a movement of growers, educators, and changemakers building a food‑secure, climate‑resilient Kenya – one garden at a time.</p>
-      <div class="hero-actions">
-        <a href="volunteersForm.html" class="btn primary">Get Started</a>
-        <a href="contactus.html" class="btn ghost">Contact Us</a>
+    <section class="section alt" id="benefits">
+      <div class="container">
+        <div style="text-align:center; max-width:700px; margin:0 auto 48px;" class="reveal">
+          <p class="section-kicker">Why grow with us</p>
+          <h2 class="section-title">Meaningful experiences, real skills.</h2>
+          <p class="section-copy">A community of people turning climate challenges into green solutions.</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h5>Grow Real Impact</h5>
+            <p>Help install wicking beds that save water, boost yields, and put fresh food on school and family tables.</p>
+          </div>
+          <div class="benefit-card reveal delay-1">
+            <div class="benefit-icon"><i class="fa-solid fa-tools"></i></div>
+            <h5>Build Hands‑On Skills</h5>
+            <p>Learn climate‑smart techniques, composting, water management, and agri‑business.</p>
+          </div>
+          <div class="benefit-card reveal delay-2">
+            <div class="benefit-icon"><i class="fa-solid fa-people-arrows"></i></div>
+            <h5>Expand Your Network</h5>
+            <p>Connect with farmers, educators, environmentalists, and youth leaders passionate about food security.</p>
+          </div>
+          <div class="benefit-card reveal delay-3">
+            <div class="benefit-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h5>Grow Your Career</h5>
+            <p>Gain practical experience, mentorship, and references that open doors in agriculture and development.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="section-kicker">Ready to dig in?</p>
+            <h2>Join a movement of growers & changemakers.</h2>
+            <p>Building a food‑secure, climate‑resilient Kenya — one garden at a time.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="volunteers.html">Get started <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-ghost" href="contactus.html">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img src="images/logo.png" alt="RigenFarms Logo" />
-            <div>
-              <h5 style="margin:0;">RigenFarms</h5>
-              <p style="font-size:0.75rem;">Grow · Nourish · Sustain</p>
-            </div>
+            <img src="images/logo.png" alt="" />
+            <div><strong>RigenFarms</strong><span>Grow smart. Eat well.</span></div>
           </div>
-          <p style="font-size:0.85rem; line-height:1.6;">A community-driven initiative promoting climate‑smart agriculture through innovative wicking container gardening, empowering schools and communities for a food‑secure, resilient future.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <p>Empowering schools and communities with climate‑smart wicking container gardening to build food security and resilience across Kenya.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <div>
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="projects.html">Our Work</a></li>
-            <li><a href="volunteers.html">Get Involved</a></li>
-            <li><a href="contactus.html">Contact</a></li>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="projects.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
           </ul>
         </div>
         <div>
-          <h5>Get Involved</h5>
-          <ul>
-            <li><a href="volunteersForm.html">Volunteer Form</a></li>
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="annual-reports.html">Reports</a></li>
+            <li><a href="memoranda.html">Guides</a></li>
             <li><a href="donation.html">Donate</a></li>
-            <li><a href="contactus.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
         <div>
-          <h5>Contact</h5>
-          <ul class="footer-contact">
-            <li><i class="fas fa-envelope"></i><span>info@rigenfarms.org</span></li>
-            <li><i class="fas fa-phone"></i><span>+254 706 476 939</span></li>
-            <li><i class="fas fa-map-marker-alt"></i><span>Kisumu, Kenya</span></li>
-          </ul>
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <a href="mailto:rigenfarms@gmail.com">rigenfarms@gmail.com</a>
+            <a href="tel:+254706476939">+254 706 476 939</a>
+            <span>Kisumu, Kenya</span>
+          </address>
+          <form class="newsletter">
+            <input type="email" placeholder="Email updates" />
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> RigenFarms. All Rights Reserved. Rooted in Education and Environmental Stewardship.</p>
+        <span>&copy; <span id="year"></span> RigenFarms.</span>
+        <span><a href="privacy.html">Privacy Policy</a></span>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/254706476939?text=Hello%20RigenFarms" class="wa-fab" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a class="wa-fab" href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.page-hero-slide');
-    if (slides.length > 1) {
-      setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 5000);
-    }
+    function updateHeader() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
 
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navbar = document.getElementById('navbar');
-
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      if (!isOpen) closeAllDropdowns();
     });
 
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
+    navLinks.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && !e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      } else if (link && e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       }
     });
 
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+    const dropdownToggles = Array.from(document.querySelectorAll(".dropdown-toggle"));
 
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    revealElements.forEach(el => observer.observe(el));
+    function closeAllDropdowns(except) {
+      dropdownToggles.forEach((btn) => {
+        if (btn === except) return;
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.classList.remove("is-open");
+      });
+    }
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        const willOpen = btn.getAttribute("aria-expanded") !== "true";
+        closeAllDropdowns(btn);
+        btn.setAttribute("aria-expanded", String(willOpen));
+        dropdown.classList.toggle("is-open", willOpen);
+      });
+    });
+
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        dropdownToggles.forEach((btn) => { if (document.activeElement === btn.nextElementSibling) btn.focus(); });
+      }
+    });
+    document.querySelectorAll(".dropdown").forEach((d) => d.addEventListener("click", (e) => e.stopPropagation()));
+    document.querySelector(".newsletter")?.addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.reset(); });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>

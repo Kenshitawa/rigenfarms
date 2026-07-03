@@ -5,250 +5,1079 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Gardening Guides & Resources — RigenFarms</title>
   <meta name="description" content="Download RigenFarms practical guides, wicking bed manuals, school garden resources, and climate‑smart agriculture training materials." />
-  <link rel="icon" href="images/logo.png" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     :root {
-      --primary: #2d6a4f;
-      --primary-light: #52b788;
-      --primary-dark: #1b4332;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --text: #1e293b;
-      --text-light: #334155;
-      --text-muted: #475569;
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.2s ease;
-      --grad-brand: linear-gradient(135deg, var(--primary), var(--primary-light));
+      --ink: #0c1b2a;
+      --ink-soft: #33495f;
+      --muted: #5a7189;
+      --cream: #eef3fa;
+      --cream-2: #f6f9fc;
+      --sage: #d7e6f6;
+      --green: #124a80;
+      --green-2: #0b3560;
+      --leaf: #4f97d8;
+      --gold: #35c6f4;
+      --gold-ink: #052033;
+      --white: #ffffff;
+      --line: rgba(12, 27, 42, 0.12);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 14px rgba(9, 28, 48, 0.08);
+      --shadow: 0 24px 60px rgba(6, 22, 40, 0.20);
+      --shadow-soft: 0 14px 34px rgba(9, 28, 48, 0.10);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg-soft);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream-2);
       line-height: 1.5;
-      font-size: 1rem;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(53, 198, 244, 0.75); outline-offset: 4px; border-radius: 4px; }
 
-    /* Top bar */
-    .top-bar { background: var(--primary-dark); color: white; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
-    .top-bar-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: var(--transition); }
-    .top-bar-links a:hover { color: white; }
-    .top-bar-actions { display: flex; gap: 1rem; }
-    .top-btn { padding: 0.4rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; }
-    .top-btn.report { background: var(--accent); color: white; }
-    .top-btn.report:hover { background: #d97706; transform: translateY(-1px); }
-    .top-btn.donate { background: white; color: var(--primary); }
-    .top-btn.donate:hover { background: #f1f5f9; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .container-wide { width: min(1360px, calc(100% - 48px)); margin-inline: auto; }
 
-    /* Navbar */
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: var(--transition); }
-    .navbar.scrolled { box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1.5rem; }
-    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 10px; }
-    .brand-text p { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
-    .nav-menu { list-style: none; display: flex; align-items: center; gap: 0.25rem; }
-    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.95rem; padding: 0.6rem 1.1rem; border-radius: 40px; transition: var(--transition); }
-    .nav-menu a:hover, .nav-menu a.active { background: var(--bg-light); color: var(--primary); }
-    .mobile-toggle { display: none; background: none; border: 1px solid var(--border); padding: 0.6rem; border-radius: 10px; cursor: pointer; background: white; }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 16, 28, 0.55), rgba(6, 16, 28, 0));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 280ms ease, color 280ms ease, box-shadow 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-    /* Hero */
-    .page-hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; min-height: 320px; background: var(--grad-brand); }
-    .hero-bg { position: absolute; inset: 0; background-image: url('images/16.jpg'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(27,67,50,0.7), rgba(45,106,79,0.6)); z-index: 1; }
-    .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 40px; background: rgba(245,158,11,0.2); border: 1px solid rgba(245,158,11,0.4); color: #fcd34d; font-size: 0.7rem; font-weight: 700; margin-bottom: 1rem; }
-    .page-hero h1 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.5rem); color: white; margin-bottom: 0.8rem; }
-    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.9); line-height: 1.6; max-width: 650px; margin: 0 auto; }
-    .breadcrumb { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+    .site-header.is-scrolled,
+    .site-header.menu-open {
+      background: rgba(246, 249, 252, 0.86);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 8px 30px rgba(9, 28, 48, 0.08);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-    /* Stats Strip */
-    .stats-strip { background: var(--primary); }
-    .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .stat-cell { padding: 1rem; border-right: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 0.8rem; }
-    .stat-cell:last-child { border-right: none; }
-    .stat-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.1); display: grid; place-items: center; color: #fcd34d; font-size: 0.9rem; }
-    .stat-label { font-size: 0.65rem; color: rgba(255,255,255,0.6); font-weight: 600; margin-bottom: 0.1rem; }
-    .stat-value { font-family: 'Outfit', sans-serif; font-size: 1.3rem; color: white; font-weight: 700; line-height: 1.2; }
+    .utility {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: border-color 280ms ease;
+    }
 
-    /* Main Layout */
-    .main-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; padding: 3rem 0; align-items: start; }
-    .sidebar { position: sticky; top: 90px; }
-    .sidebar-card { background: white; border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; margin-bottom: 1rem; }
-    .sidebar-card-header { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-soft); display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 0.85rem; color: var(--primary-dark); }
+    .site-header.is-scrolled .utility,
+    .site-header.menu-open .utility { border-color: var(--line); }
+
+    .utility-inner,
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .utility-inner { min-height: 40px; }
+
+    .utility-links,
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .utility-links { gap: 28px; opacity: 0.85; }
+    .utility-actions { display: flex; align-items: center; gap: 20px; }
+
+    .nav-inner { min-height: 80px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: background 280ms ease;
+    }
+
+    .site-header.is-scrolled .brand-mark,
+    .site-header.menu-open .brand-mark { background: var(--white); }
+
+    .brand-title {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links { gap: 4px; }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 200ms ease, color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-item.has-dropdown .nav-link { padding-right: 10px; }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-right: 4px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .dropdown-toggle i { transition: transform 220ms ease; display: block; }
+    .dropdown-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+    .nav-link:hover,
+    .dropdown-toggle:hover,
+    .dropdown-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.14); }
+
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.menu-open .nav-link:hover,
+    .site-header.is-scrolled .dropdown-toggle:hover,
+    .site-header.menu-open .dropdown-toggle:hover,
+    .site-header.is-scrolled .dropdown-toggle[aria-expanded="true"],
+    .site-header.menu-open .dropdown-toggle[aria-expanded="true"] { background: rgba(18, 74, 128, 0.08); color: var(--green); }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(6, 22, 40, 0.16);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+      z-index: 5;
+    }
+
+    .dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-item.has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .dropdown a:hover { background: var(--cream); color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-left: 6px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), #1fa3e0);
+      color: var(--gold-ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(53, 198, 244, 0.32);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(53, 198, 244, 0.42);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      min-height: 50vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("images/16.jpg") center / cover no-repeat;
+      transform: scale(1.05);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.88) 0%, rgba(6, 22, 40, 0.5) 55%, rgba(6, 22, 40, 0.2) 100%),
+                  linear-gradient(0deg, rgba(5, 16, 28, 0.8) 0%, rgba(6, 22, 40, 0.2) 40%, rgba(6, 22, 40, 0.5) 100%);
+    }
+
+    .page-hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: min(50vw, 600px);
+      aspect-ratio: 1;
+      right: -5%;
+      top: -10%;
+      background: radial-gradient(circle, rgba(53, 198, 244, 0.28), rgba(53, 198, 244, 0) 68%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.05) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-20px, -8px, 0); }
+    }
+
+    .page-hero-content {
+      width: min(800px, 100%);
+      padding: 180px 0 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .page-hero h1,
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 700;
+      background: linear-gradient(100deg, #ffffff 55%, #bfe6fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 0;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--cream-2);
+    }
+
+    .section.alt { background: var(--cream); }
+    .section.green { background: linear-gradient(160deg, var(--green-2), var(--green)); color: var(--white); }
+    .section.compact { padding-block: clamp(60px, 8vw, 90px); }
+
+    .section-kicker {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .green .section-kicker { color: var(--gold); }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .green .section-copy { color: rgba(255, 255, 255, 0.8); }
+
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line-light);
+    }
+
+    .stat {
+      padding: 36px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat span { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
+
+    .main-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .sidebar { position: sticky; top: 100px; }
+
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-card-header {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--cream-2);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--green);
+    }
+
     .sidebar-card-body { padding: 1rem; }
+
     .search-box { position: relative; }
-    .search-box input { width: 100%; padding: 0.7rem 1rem 0.7rem 2.3rem; border: 1px solid var(--border); border-radius: 40px; font-size: 0.85rem; outline: none; }
-    .search-box i { position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem; }
+    .search-box input {
+      width: 100%;
+      padding: 0.7rem 1rem 0.7rem 2.4rem;
+      border: 1px solid var(--line);
+      border-radius: 40px;
+      font-size: 0.85rem;
+      outline: none;
+      background: var(--white);
+      transition: border-color 200ms ease;
+    }
+
+    .search-box input:focus {
+      border-color: var(--leaf);
+      box-shadow: 0 0 0 3px rgba(79, 151, 216, 0.12);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
     .cat-list { list-style: none; }
-    .cat-item { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.7rem; border-radius: 10px; cursor: pointer; transition: var(--transition); font-size: 0.85rem; }
-    .cat-item:hover { background: rgba(45, 106, 79, 0.05); color: var(--primary); }
-    .cat-item.active { background: rgba(45, 106, 79, 0.08); color: var(--primary); font-weight: 700; }
-    .cat-count { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 40px; background: var(--bg-soft); }
-    .upload-zone { border: 2px dashed var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; cursor: pointer; transition: var(--transition); }
-    .upload-zone:hover { border-color: var(--primary-light); background: rgba(82,183,136,0.05); }
-    .upload-zone i { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 0.3rem; display: block; }
-    .upload-zone p { font-size: 0.7rem; color: var(--text-muted); }
-    #fileInput { display: none; }
 
-    /* Content Area */
-    .content-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .result-count { font-size: 0.85rem; color: var(--text-muted); }
-    .sort-select { padding: 0.5rem 0.8rem; border-radius: 40px; border: 1px solid var(--border); font-size: 0.8rem; background: white; }
+    .cat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 200ms ease;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .cat-item:hover { background: rgba(18, 74, 128, 0.05); color: var(--green); }
+    .cat-item.active { background: rgba(18, 74, 128, 0.08); color: var(--green); font-weight: 700; }
+
+    .cat-count {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 40px;
+      background: var(--cream);
+      font-weight: 600;
+    }
+
+    .content-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-count { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+
+    .sort-select {
+      padding: 0.5rem 0.9rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+      background: var(--white);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
     .view-toggle { display: flex; gap: 0.3rem; }
-    .view-btn { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: white; cursor: pointer; display: grid; place-items: center; color: var(--text-muted); }
-    .view-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-    /* Document Grid */
-    .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
+    .view-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      transition: all 200ms ease;
+    }
+
+    .view-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
     .doc-grid.list-view { grid-template-columns: 1fr; }
-    .doc-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition); cursor: pointer; }
-    .doc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .doc-thumbnail { position: relative; height: 140px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; }
-    .doc-file-icon { width: 56px; height: 70px; background: white; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-    .doc-file-icon i { font-size: 1.4rem; color: #e53e3e; }
-    .doc-ext { font-size: 0.55rem; font-weight: 600; background: #fff5f5; color: #e53e3e; padding: 0.1rem 0.35rem; border-radius: 3px; margin-top: 0.2rem; }
-    .doc-badge { position: absolute; top: 0.6rem; left: 0.6rem; padding: 0.2rem 0.6rem; border-radius: 40px; font-size: 0.6rem; font-weight: 700; backdrop-filter: blur(6px); }
-    .badge-guide { background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4); color: #d1fae5; }
-    .badge-manual { background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.4); color: #fcd34d; }
-    .badge-checklist { background: rgba(59,130,246,0.2); border: 1px solid rgba(59,130,246,0.4); color: #bfdbfe; }
-    .doc-actions-overlay { position: absolute; inset: 0; background: rgba(27,67,50,0.75); display: flex; align-items: center; justify-content: center; gap: 0.6rem; opacity: 0; transition: var(--transition); }
-    .doc-card:hover .doc-actions-overlay { opacity: 1; }
-    .overlay-btn { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; cursor: pointer; display: grid; place-items: center; }
-    .doc-body { padding: 1rem; }
-    .doc-category-tag { font-size: 0.65rem; font-weight: 700; color: var(--primary-light); margin-bottom: 0.3rem; }
-    .doc-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; line-height: 1.3; }
-    .doc-desc { color: var(--text-muted); font-size: 0.75rem; line-height: 1.5; margin-bottom: 0.6rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .doc-meta { display: flex; gap: 0.4rem; flex-wrap: wrap; padding-top: 0.5rem; border-top: 1px solid var(--border); }
-    .doc-meta-item { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.65rem; color: var(--text-muted); }
-    .doc-footer { padding: 0.6rem 1rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); background: var(--bg-soft); }
-    .doc-size-badge { font-size: 0.65rem; color: var(--text-muted); }
-    .doc-btn { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; cursor: pointer; background: white; border: 1px solid var(--border); }
-    .doc-btn.view { background: var(--grad-brand); color: white; border: none; }
 
-    /* Modal */
-    .modal-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,0.88); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal { background: white; border-radius: var(--radius-lg); width: 100%; max-width: 900px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; }
-    .modal-header { padding: 0.8rem 1rem; background: var(--grad-brand); display: flex; align-items: center; gap: 0.8rem; }
-    .modal-doc-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1rem; color: white; }
-    .modal-title-group { flex: 1; }
-    .modal-title { font-weight: 700; font-size: 0.9rem; color: white; }
-    .modal-subtitle { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
-    .modal-close-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); color: white; cursor: pointer; display: grid; place-items: center; border: none; }
-    .modal-body { flex: 1; overflow: auto; background: #1a1f2e; display: flex; align-items: center; justify-content: center; padding: 1rem; }
-    .modal-body iframe { width: 100%; height: 100%; border: none; background: white; min-height: 400px; }
-    .modal-meta-strip { padding: 0.6rem 1rem; border-top: 1px solid var(--border); background: var(--bg-soft); display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.7rem; color: var(--text-muted); }
+    .doc-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      cursor: pointer;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .doc-thumbnail {
+      position: relative;
+      height: 150px;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .doc-file-icon {
+      width: 60px;
+      height: 74px;
+      background: var(--white);
+      border-radius: 10px 10px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .doc-file-icon i { font-size: 1.5rem; color: #e53e3e; }
+
+    .doc-ext {
+      font-size: 0.6rem;
+      font-weight: 600;
+      background: #fff5f5;
+      color: #e53e3e;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      margin-top: 0.25rem;
+    }
+
+    .doc-badge {
+      position: absolute;
+      top: 0.7rem;
+      left: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 40px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+    }
+
+    .badge-guide { background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #d1fae5; }
+    .badge-manual { background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde68a; }
+    .badge-checklist { background: rgba(53, 198, 244, 0.2); border: 1px solid rgba(53, 198, 244, 0.4); color: #bfe6fb; }
+
+    .doc-actions-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 27, 42, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    .doc-card:hover .doc-actions-overlay { opacity: 1; }
+
+    .overlay-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      transition: all 200ms ease;
+    }
+
+    .overlay-btn:hover { background: var(--white); color: var(--green); transform: scale(1.05); }
+
+    .doc-body { padding: 1.2rem; }
+
+    .doc-category-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--leaf);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .doc-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.3; }
+
+    .doc-desc {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .doc-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .doc-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .doc-footer {
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      background: var(--cream-2);
+    }
+
+    .doc-size-badge { font-size: 0.7rem; color: var(--muted); font-weight: 600; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 38px;
+      padding: 0 16px;
+      border-radius: 60px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease, filter 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary-sm {
+      background: linear-gradient(135deg, var(--gold), #1487c9);
+      color: var(--gold-ink);
+      box-shadow: 0 8px 20px rgba(53, 198, 244, 0.25);
+    }
+
+    .btn-primary-sm:hover { filter: brightness(1.06); box-shadow: 0 14px 30px rgba(53, 198, 244, 0.38); }
+
+    .btn-outline-sm { border-color: var(--line); color: var(--ink-soft); background: transparent; }
+    .btn-outline-sm:hover { border-color: var(--green); color: var(--green); background: rgba(18, 74, 128, 0.05); }
 
     /* Footer */
-    .footer { background: #0a1628; color: white; padding: 3rem 0 1.5rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
-    .footer-brand img { height: 52px; background: white; padding: 8px; border-radius: 12px; }
-    .footer-brand-text h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; margin-bottom: 0.2rem; }
-    .footer-brand-text p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
-    .footer h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: white; }
-    .footer ul li { margin-bottom: 0.5rem; list-style: none; }
-    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.4rem; }
-    .footer a:hover { color: white; transform: translateX(3px); }
-    .footer-contact li { display: flex; align-items: start; gap: 0.6rem; color: rgba(255,255,255,0.75); margin-bottom: 0.7rem; font-size: 0.85rem; }
-    .footer-contact i { color: var(--primary-light); margin-top: 0.15rem; }
-    .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; }
-    .social-links a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: grid; place-items: center; color: white; transition: var(--transition); }
-    .social-links a:hover { background: var(--primary-light); transform: translateY(-2px); }
-    .footer-bottom { text-align: center; padding-top: 1rem; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer {
+      background: #061424;
+      color: var(--white);
+      padding: 70px 0 28px;
+    }
 
-    .wa-fab { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: white; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 999; transition: var(--transition); text-decoration: none; }
-    .wa-fab:hover { transform: scale(1.05); }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
 
-    @media (max-width: 1024px) {
-      .top-bar { display: none; }
-      .mobile-toggle { display: flex; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; gap: 0.5rem; padding: 1rem; transform: translateY(-150%); transition: 0.25s ease; box-shadow: var(--shadow-lg); border-bottom: 1px solid var(--border); z-index: 999; }
-      .nav-menu.active { transform: translateY(0); }
-      .nav-menu a { width: 100%; text-align: center; }
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .footer-brand img { width: 48px; height: 48px; padding: 5px; border-radius: 50%; background: var(--white); }
+    .footer-brand strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.1rem; }
+
+    .footer p { color: rgba(255, 255, 255, 0.65); margin: 0; }
+    .footer h3 { margin: 0 0 18px; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-links { flex-direction: column; align-items: flex-start; gap: 12px; list-style: none; display: flex; }
+    .footer-links a, .footer-contact a, .footer-contact span { color: rgba(255, 255, 255, 0.68); transition: color 180ms; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+    .footer-contact { display: grid; gap: 14px; font-style: normal; }
+    .newsletter { display: flex; gap: 8px; margin-top: 24px; }
+    .newsletter input {
+      width: 100%; min-height: 48px; border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 0 16px; color: white; background: rgba(255, 255, 255, 0.08);
+    }
+    .newsletter input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .newsletter button {
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); cursor: pointer;
+    }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.7); transition: 180ms; }
+    .socials a:hover { background: var(--gold); color: var(--gold-ink); transform: translateY(-2px); }
+
+    .wa-fab {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px;
+      display: grid; place-items: center; border-radius: 50%; background: #25d366; color: white;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.35); font-size: 1.6rem;
+    }
+    .wa-fab:hover { transform: translateY(-3px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 100ms; }
+
+    @media (max-width: 1080px) {
+      .nav-links { position: fixed; top: 120px; left: 24px; right: 24px; display: none; padding: 16px; border-radius: var(--radius); background: white; color: var(--ink); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .nav-item { flex-wrap: wrap; }
+      .dropdown { position: static; width: 100%; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; background: transparent; padding: 0 0 0 16px; max-height: 0; overflow: hidden; transition: max-height 260ms ease; }
+      .dropdown.is-open { max-height: 400px; }
+      .dropdown-toggle { order: 2; margin-left: auto; }
+      .nav-link { order: 1; flex: 1; }
+      .menu-toggle { display: flex; }
+      .utility-actions { display: none; }
       .main-layout { grid-template-columns: 1fr; }
       .sidebar { position: static; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 640px) {
-      .stats-inner { grid-template-columns: 1fr 1fr; }
+
+    @media (max-width: 780px) {
+      .container, .container-wide { width: min(100% - 32px, var(--max)); }
+      .utility { display: none; }
+      .stats-band { grid-template-columns: 1fr; }
+      .doc-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .toast-container { position: fixed; bottom: 5rem; right: 1rem; z-index: 9999; }
-    .toast { padding: 0.6rem 1rem; border-radius: 10px; background: var(--primary); color: white; font-size: 0.8rem; box-shadow: var(--shadow-md); animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.5s forwards; }
-    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    @keyframes fadeOut { to { opacity: 0; transform: translateX(20px); } }
   </style>
 </head>
-
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <ul class="top-bar-links"><li><a href="contactus.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="aboutus.html#faqs">FAQs</a></li></ul>
-        <div class="top-bar-actions"><a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" class="top-btn report"><i class="fab fa-linkedin-in"></i> Follow on LinkedIn</a><a href="donation.html" class="top-btn donate"><i class="fas fa-seedling"></i> Support Our Farms</a></div>
+  <header class="site-header" id="siteHeader">
+    <div class="utility">
+      <div class="container-wide utility-inner">
+        <ul class="utility-links">
+          <li><a href="contactus.html">Contact</a></li>
+          <li><a href="annual-reports.html">Reports</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        <div class="utility-actions">
+          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/254706476939" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </div>
-  </div>
+    <nav class="container-wide nav-inner" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="RigenFarms home">
+        <img class="brand-mark" src="images/logo.png" alt="" />
+        <span>
+          <span class="brand-title">RigenFarms</span>
+          <span class="brand-kicker">Grow smart. Eat well. Live green.</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="aboutus.html">About</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="aboutus.html" role="menuitem">Mission</a>
+            <a href="aboutus.html#team" role="menuitem">Team</a>
+            <a href="impact.html" role="menuitem">Impact</a>
+          </div>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="projects.html">Programs</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Programs menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="projects.html" role="menuitem">Agriculture</a>
+            <a href="projects.html" role="menuitem">School Gardens</a>
+            <a href="memoranda.html" role="menuitem">Resources</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#innovation">Innovation</a></li>
+        <li><a class="nav-link" href="index.html#insights">Insights</a></li>
+        <li><a class="nav-link" href="volunteers.html">Get Involved</a></li>
+        <li><a class="nav-cta" href="donation.html">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav class="navbar" id="navbar">
+  <main>
+    <section class="page-hero" id="top">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero-content reveal is-visible">
+          <span class="eyebrow">Practical resources</span>
+          <h1>Gardening Guides & Resources.</h1>
+          <p class="hero-copy">Free, practical guides on wicking beds, school gardens, composting, water harvesting, and climate‑smart agriculture — straight from our fields to yours.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green compact">
+      <div class="container">
+        <div class="stats-band reveal">
+          <div class="stat"><strong id="totalDocs">0</strong><span>Total Guides</span></div>
+          <div class="stat"><strong id="totalCats">0</strong><span>Categories</span></div>
+          <div class="stat"><strong id="viewCount">0</strong><span>Views</span></div>
+          <div class="stat"><strong id="dlCount">0</strong><span>Downloads</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="main-layout">
+          <aside class="sidebar reveal">
+            <div class="sidebar-card">
+              <div class="sidebar-card-header"><i class="fa-solid fa-search"></i> Search Guides</div>
+              <div class="sidebar-card-body">
+                <div class="search-box">
+                  <i class="fa-solid fa-search"></i>
+                  <input type="text" id="searchInput" placeholder="Search title, category..." autocomplete="off" />
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sidebar-card-header"><i class="fa-solid fa-layer-group"></i> Categories</div>
+              <div class="sidebar-card-body">
+                <ul class="cat-list" id="catList"></ul>
+              </div>
+            </div>
+          </aside>
+
+          <div class="content-area reveal delay-1">
+            <div class="content-toolbar">
+              <div class="result-count"><strong id="visibleCount">0</strong> document(s)</div>
+              <div style="display:flex;gap:0.5rem;align-items:center;">
+                <select class="sort-select" id="sortSelect">
+                  <option value="date-desc">Newest First</option>
+                  <option value="date-asc">Oldest First</option>
+                  <option value="title-asc">Title A–Z</option>
+                </select>
+                <div class="view-toggle">
+                  <button class="view-btn active" id="gridBtn"><i class="fa-solid fa-th-large"></i></button>
+                  <button class="view-btn" id="listBtn"><i class="fa-solid fa-list"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="doc-grid" id="docGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="index.html"><img src="images/logo.png" alt="RigenFarms Logo" /><div class="brand-text"><p>GROW • NOURISH • SUSTAIN</p></div></a>
-        <ul class="nav-menu" id="navMenu"><li><a href="index.html">Home</a></li><li><a href="aboutus.html">Who We Are</a></li><li><a href="projects.html" class="active">Our Work</a></li><li><a href="volunteers.html">Get Involved</a></li><li><a href="contactus.html">Contact</a></li></ul>
-        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="images/logo.png" alt="" />
+            <div><strong>RigenFarms</strong><span>Grow smart. Eat well.</span></div>
+          </div>
+          <p>Empowering schools and communities with climate‑smart wicking container gardening to build food security and resilience across Kenya.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="projects.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="annual-reports.html">Reports</a></li>
+            <li><a href="memoranda.html">Guides</a></li>
+            <li><a href="donation.html">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <a href="mailto:rigenfarms@gmail.com">rigenfarms@gmail.com</a>
+            <a href="tel:+254706476939">+254 706 476 939</a>
+            <span>Kisumu, Kenya</span>
+          </address>
+          <form class="newsletter">
+            <input type="email" placeholder="Email updates" />
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> RigenFarms.</span>
+        <span><a href="privacy.html">Privacy Policy</a></span>
       </div>
     </div>
-  </nav>
+  </footer>
 
-  <section class="page-hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="container"><div class="page-hero-content"><div class="hero-eyebrow"><i class="fas fa-book-open"></i> Practical Resources</div><h1>Gardening Guides &<br>Resources</h1><p>Free, practical guides on wicking beds, school gardens, composting, water harvesting, and climate‑smart agriculture – straight from our fields to yours.</p><div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <a href="projects.html">Our Work</a> <i class="fas fa-chevron-right"></i> <span>Guides</span></div></div></div>
-  </section>
-
-  <div class="stats-strip"><div class="container" style="padding:0;"><div class="stats-inner"><div class="stat-cell"><div class="stat-icon"><i class="fas fa-file-alt"></i></div><div><div class="stat-label">Guides</div><div class="stat-value" id="totalDocs">0</div></div></div><div class="stat-cell"><div class="stat-icon"><i class="fas fa-tags"></i></div><div><div class="stat-label">Categories</div><div class="stat-value" id="totalCats">0</div></div></div><div class="stat-cell"><div class="stat-icon"><i class="fas fa-eye"></i></div><div><div class="stat-label">Views</div><div class="stat-value" id="viewCount">0</div></div></div><div class="stat-cell"><div class="stat-icon"><i class="fas fa-download"></i></div><div><div class="stat-label">Downloads</div><div class="stat-value" id="dlCount">0</div></div></div></div></div></div>
-
-  <div class="container"><div class="main-layout">
-    <aside class="sidebar"><div class="sidebar-card"><div class="sidebar-card-header"><i class="fas fa-search"></i> Search Guides</div><div class="sidebar-card-body"><div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Search title, category..." autocomplete="off" /></div></div></div><div class="sidebar-card"><div class="sidebar-card-header"><i class="fas fa-layer-group"></i> Categories</div><div class="sidebar-card-body"><ul class="cat-list" id="catList"></ul></div></div><div class="sidebar-card"><div class="sidebar-card-header"><i class="fas fa-cloud-upload-alt"></i> Add a Guide</div><div class="sidebar-card-body"><div class="upload-zone" id="uploadZone"><i class="fas fa-file-upload"></i><p>Drag & drop files<br>or <strong>click to browse</strong></p></div><input type="file" id="fileInput" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" multiple /></div></div></aside>
-
-    <div class="content-area"><div class="content-toolbar"><div class="result-count"><strong id="visibleCount">0</strong> document(s)</div><div class="toolbar-right"><select class="sort-select" id="sortSelect"><option value="date-desc">Newest First</option><option value="date-asc">Oldest First</option><option value="title-asc">Title A–Z</option></select><div class="view-toggle"><button class="view-btn active" id="gridBtn"><i class="fas fa-th-large"></i></button><button class="view-btn" id="listBtn"><i class="fas fa-list"></i></button></div></div></div><div class="doc-grid" id="docGrid"></div></div>
-  </div></div>
-
-  <div class="modal-overlay" id="modalOverlay"><div class="modal"><div class="modal-header"><div class="modal-doc-icon" id="modalDocIcon"><i class="fas fa-file"></i></div><div class="modal-title-group"><div class="modal-title" id="modalTitle">Guide</div><div class="modal-subtitle" id="modalSubtitle"></div></div><button class="modal-close-btn" id="modalCloseBtn"><i class="fas fa-times"></i></button></div><div class="modal-body"><iframe id="docFrame" title="Guide viewer"></iframe></div><div class="modal-meta-strip" id="modalMetaStrip"></div></div></div>
-
-  <div class="toast-container" id="toastContainer"></div>
-
-  <footer class="footer"><div class="container"><div class="footer-grid"><div><div class="footer-brand"><img src="images/logo.png" alt="RigenFarms Logo" /><div><h5 style="margin:0;">RigenFarms</h5><p style="font-size:0.75rem;">Grow · Nourish · Sustain</p></div></div><p style="font-size:0.85rem; line-height:1.6;">A community-driven initiative promoting climate‑smart agriculture through innovative wicking container gardening, empowering schools and communities for a food‑secure, resilient future.</p><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/254797680921" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="projects.html">Our Work</a></li><li><a href="volunteers.html">Get Involved</a></li><li><a href="contactus.html">Contact</a></li></ul></div><div><h5>Resources</h5><ul><li><a href="projects.html">Our Programmes</a></li><li><a href="volunteers.html">Volunteer</a></li><li><a href="donation.html">Donate</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div><div><h5>Contact</h5><ul class="footer-contact"><li><i class="fas fa-envelope"></i><span>info@rigenfarms.org</span></li><li><i class="fas fa-phone"></i><span>+254 797 680921<br>+254 792 594021</span></li><li><i class="fas fa-map-marker-alt"></i><span>Kisumu, Kenya</span></li></ul></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> RigenFarms. All Rights Reserved. Rooted in Education and Environmental Stewardship.</p></div></div></footer>
-
-  <a href="https://wa.me/254797680921?text=Hello%20RigenFarms" class="wa-fab" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a class="wa-fab" href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Gardening guides and resources tailored for RigenFarms
+    function updateHeader() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      if (!isOpen) closeAllDropdowns();
+    });
+
+    navLinks.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && !e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      } else if (link && e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+
+    const dropdownToggles = Array.from(document.querySelectorAll(".dropdown-toggle"));
+
+    function closeAllDropdowns(except) {
+      dropdownToggles.forEach((btn) => {
+        if (btn === except) return;
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.classList.remove("is-open");
+      });
+    }
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        const willOpen = btn.getAttribute("aria-expanded") !== "true";
+        closeAllDropdowns(btn);
+        btn.setAttribute("aria-expanded", String(willOpen));
+        dropdown.classList.toggle("is-open", willOpen);
+      });
+    });
+
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        dropdownToggles.forEach((btn) => { if (document.activeElement === btn.nextElementSibling) btn.focus(); });
+      }
+    });
+    document.querySelectorAll(".dropdown").forEach((d) => d.addEventListener("click", (e) => e.stopPropagation()));
+    document.querySelector(".newsletter")?.addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.reset(); });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
+
+    /* Guides data & logic */
     let documents = [
       { id: 1, title: "How to Build a Wicking Bed (Step‑by‑Step)", description: "A practical illustrated guide for constructing your own water‑efficient wicking container garden at home or school.", category: "Wicking Guides", type: "pdf", badge: "guide", date: "2025-11-01", size: "1.4 MB", pages: 12, author: "RigenFarms", url: "", demo: true },
       { id: 2, title: "School Garden Starter Kit Manual", description: "Everything you need to launch a successful wicking garden programme in a primary or secondary school.", category: "School Gardens", type: "pdf", badge: "manual", date: "2025-09-15", size: "2.1 MB", pages: 24, author: "RigenFarms", url: "", demo: true },
@@ -257,34 +1086,144 @@
       { id: 5, title: "Rainwater Harvesting & Water Management Guide", description: "Simple systems to capture, store, and use rainwater for your wicking beds, reducing dependence on municipal supply.", category: "Water Management", type: "pdf", badge: "guide", date: "2025-05-05", size: "1.2 MB", pages: 15, author: "RigenFarms", url: "", demo: true },
       { id: 6, title: "Youth Agripreneurship Workbook", description: "A step‑by‑step workbook for young people to turn a kitchen garden into a small business, covering planning, budgeting, and marketing.", category: "Youth Empowerment", type: "pdf", badge: "manual", date: "2025-03-01", size: "3.5 MB", pages: 32, author: "RigenFarms", url: "", demo: true }
     ];
-    let filteredDocs = [], activeCategory = 'all', currentSort = 'date-desc', viewCount = parseInt(localStorage.getItem('rf_guide_views') || '0'), dlCount = parseInt(localStorage.getItem('rf_guide_dls') || '0');
-    document.getElementById('viewCount').textContent = viewCount; document.getElementById('dlCount').textContent = dlCount;
 
-    function getCategories() { const cats = {}; documents.forEach(d => { cats[d.category] = (cats[d.category] || 0) + 1; }); return cats; }
-    function renderCategories() { const cats = getCategories(); const total = documents.length; let html = `<li class="cat-item ${activeCategory==='all'?'active':''}" data-cat="all"><span>All Guides</span><span class="cat-count">${total}</span></li>`; Object.entries(cats).forEach(([cat, count]) => { html += `<li class="cat-item ${activeCategory===cat?'active':''}" data-cat="${cat}"><span>${cat}</span><span class="cat-count">${count}</span></li>`; }); document.getElementById('catList').innerHTML = html; document.querySelectorAll('.cat-item').forEach(item => { item.addEventListener('click', () => { activeCategory = item.dataset.cat; renderCategories(); applyFilters(); }); }); }
-    function applyFilters() { const q = document.getElementById('searchInput').value.toLowerCase(); filteredDocs = documents.filter(d => (activeCategory === 'all' || d.category === activeCategory) && (!q || d.title.toLowerCase().includes(q) || d.category.toLowerCase().includes(q) || d.description.toLowerCase().includes(q))); sortDocs(); renderDocs(); updateStats(); }
-    function sortDocs() { filteredDocs.sort((a, b) => { if (currentSort === 'date-asc') return new Date(a.date) - new Date(b.date); if (currentSort === 'date-desc') return new Date(b.date) - new Date(a.date); if (currentSort === 'title-asc') return a.title.localeCompare(b.title); return 0; }); }
-    function updateStats() { document.getElementById('totalDocs').textContent = documents.length; document.getElementById('totalCats').textContent = Object.keys(getCategories()).length; }
+    let filteredDocs = [], activeCategory = 'all', currentSort = 'date-desc';
+    let viewCount = parseInt(localStorage.getItem('rf_guide_views') || '0');
+    let dlCount = parseInt(localStorage.getItem('rf_guide_dls') || '0');
+
+    document.getElementById('viewCount').textContent = viewCount;
+    document.getElementById('dlCount').textContent = dlCount;
+
+    function getCategories() {
+      const cats = {};
+      documents.forEach(d => { cats[d.category] = (cats[d.category] || 0) + 1; });
+      return cats;
+    }
+
+    function renderCategories() {
+      const cats = getCategories();
+      const total = documents.length;
+      let html = `<li class="cat-item ${activeCategory === 'all' ? 'active' : ''}" data-cat="all"><span>All Guides</span><span class="cat-count">${total}</span></li>`;
+      Object.entries(cats).forEach(([cat, count]) => {
+        html += `<li class="cat-item ${activeCategory === cat ? 'active' : ''}" data-cat="${cat}"><span>${cat}</span><span class="cat-count">${count}</span></li>`;
+      });
+      document.getElementById('catList').innerHTML = html;
+      document.querySelectorAll('.cat-item').forEach(item => {
+        item.addEventListener('click', () => {
+          activeCategory = item.dataset.cat;
+          renderCategories();
+          applyFilters();
+        });
+      });
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      filteredDocs = documents.filter(d =>
+        (activeCategory === 'all' || d.category === activeCategory) &&
+        (!q || d.title.toLowerCase().includes(q) || d.category.toLowerCase().includes(q) || d.description.toLowerCase().includes(q))
+      );
+      sortDocs();
+      renderDocs();
+      updateStats();
+    }
+
+    function sortDocs() {
+      filteredDocs.sort((a, b) => {
+        if (currentSort === 'date-asc') return new Date(a.date) - new Date(b.date);
+        if (currentSort === 'date-desc') return new Date(b.date) - new Date(a.date);
+        if (currentSort === 'title-asc') return a.title.localeCompare(b.title);
+        return 0;
+      });
+    }
+
+    function updateStats() {
+      document.getElementById('totalDocs').textContent = documents.length;
+      document.getElementById('totalCats').textContent = Object.keys(getCategories()).length;
+    }
+
     const badgeLabels = { guide: 'Guide', manual: 'Manual', checklist: 'Checklist' };
-    function renderDocs() { const grid = document.getElementById('docGrid'); document.getElementById('visibleCount').textContent = filteredDocs.length; if (!filteredDocs.length) { grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;text-align:center;padding:2rem;">No guides found</div>`; return; } grid.innerHTML = filteredDocs.map(d => `<div class="doc-card" data-id="${d.id}"><div class="doc-thumbnail"><div class="doc-file-icon"><i class="fas fa-file-pdf"></i><span class="doc-ext">PDF</span></div><div class="doc-badge badge-${d.badge}">${badgeLabels[d.badge]||d.badge}</div><div class="doc-actions-overlay"><button class="overlay-btn view-doc" data-id="${d.id}"><i class="fas fa-eye"></i></button><button class="overlay-btn dl-doc" data-id="${d.id}"><i class="fas fa-download"></i></button></div></div><div class="doc-body"><div class="doc-category-tag"><i class="fas fa-tag"></i> ${d.category}</div><h3 class="doc-title">${d.title}</h3><p class="doc-desc">${d.description}</p><div class="doc-meta"><span class="doc-meta-item"><i class="fas fa-calendar-alt"></i> ${new Date(d.date).toLocaleDateString()}</span><span class="doc-meta-item"><i class="fas fa-file-alt"></i> ${d.pages} pages</span></div></div><div class="doc-footer"><span class="doc-size-badge">${d.size}</span><div class="doc-btn-group"><button class="doc-btn view view-doc" data-id="${d.id}"><i class="fas fa-eye"></i> View</button><button class="doc-btn dl-doc" data-id="${d.id}"><i class="fas fa-download"></i></button></div></div></div>`).join(''); document.querySelectorAll('.view-doc').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); openDoc(+b.dataset.id); })); document.querySelectorAll('.dl-doc').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); downloadDoc(+b.dataset.id); })); document.querySelectorAll('.doc-card').forEach(c => c.addEventListener('click', () => openDoc(+c.dataset.id))); }
-    function downloadDoc(id) { const doc = documents.find(d => d.id === id); if (!doc || doc.demo) { showToast("Demo guide — add real file to enable download.", 'error'); return; } if (doc.url) { const a = document.createElement('a'); a.href = doc.url; a.download = doc.title.replace(/[^a-z0-9]/gi, '_') + '.' + doc.type; a.click(); dlCount++; localStorage.setItem('rf_guide_dls', dlCount); document.getElementById('dlCount').textContent = dlCount; showToast('Download started.', 'success'); } else { showToast('No file URL set.', 'error'); } }
-    function openDoc(id) { const doc = documents.find(d => d.id === id); if (!doc) return; viewCount++; localStorage.setItem('rf_guide_views', viewCount); document.getElementById('viewCount').textContent = viewCount; document.getElementById('modalTitle').textContent = doc.title; document.getElementById('modalSubtitle').textContent = `${doc.category} · ${doc.date} · ${doc.size}`; document.getElementById('modalMetaStrip').innerHTML = `<span><i class="fas fa-user-edit"></i> ${doc.author}</span><span><i class="fas fa-calendar-alt"></i> ${doc.date}</span><span><i class="fas fa-file-alt"></i> ${doc.pages} pages</span><span><i class="fas fa-hdd"></i> ${doc.size}</span>`; const frame = document.getElementById('docFrame'); if (doc.url && !doc.demo) { frame.src = doc.url; } else { frame.srcdoc = `<html><body style="display:flex;align-items:center;justify-content:center;height:100%;font-family:sans-serif;color:#666;"><div style="text-align:center;"><i class="fas fa-file-pdf" style="font-size:3rem;color:#ef4444;"></i><p style="margin-top:1rem;">Demo guide — add your PDF file to enable viewer.</p><code style="display:block;margin-top:1rem;font-size:0.8rem;">url: "documents/${doc.title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.pdf"</code></div></body></html>`; } document.getElementById('modalOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow = ''; document.getElementById('docFrame').src = ''; }
-    document.getElementById('modalCloseBtn').addEventListener('click', closeModal); document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === document.getElementById('modalOverlay')) closeModal(); });
-    document.getElementById('searchInput').addEventListener('input', applyFilters); document.getElementById('sortSelect').addEventListener('change', e => { currentSort = e.target.value; applyFilters(); });
-    document.getElementById('gridBtn').addEventListener('click', () => { document.getElementById('docGrid').classList.remove('list-view'); document.getElementById('gridBtn').classList.add('active'); document.getElementById('listBtn').classList.remove('active'); });
-    document.getElementById('listBtn').addEventListener('click', () => { document.getElementById('docGrid').classList.add('list-view'); document.getElementById('listBtn').classList.add('active'); document.getElementById('gridBtn').classList.remove('active'); });
-    const uploadZone = document.getElementById('uploadZone'), fileInput = document.getElementById('fileInput'); function showToast(msg, type = '') { const tc = document.getElementById('toastContainer'); const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i> ${msg}`; tc.appendChild(t); setTimeout(() => t.remove(), 3000); }
-    uploadZone.addEventListener('click', () => fileInput.click()); uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); }); uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over')); uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); }); fileInput.addEventListener('change', () => handleFiles(fileInput.files));
-    function handleFiles(files) { Array.from(files).forEach((file, i) => { const ext = file.name.split('.').pop().toLowerCase(); const typeMap = { pdf:'pdf', doc:'docx', docx:'docx', xls:'xlsx', xlsx:'xlsx', ppt:'pptx', pptx:'pptx' }; const type = typeMap[ext] || 'pdf'; const url = URL.createObjectURL(file); setTimeout(() => { documents.unshift({ id: Date.now() + i, title: file.name.replace(/\.[^.]+$/, '').replace(/[_-]/g,' '), description: 'Uploaded guide. Add a description.', category: 'Uploaded', type, badge: 'guide', date: new Date().toISOString().split('T')[0], size: (file.size / 1024 > 1024 ? (file.size / 1048576).toFixed(1) + ' MB' : (file.size / 1024).toFixed(0) + ' KB'), pages: 1, author: 'RigenFarms', url, demo: false }); renderCategories(); applyFilters(); showToast(`Added: ${file.name}`, 'success'); }, i * 200); }); fileInput.value = ''; }
-    const mobileToggle = document.getElementById('mobileToggle'), navMenu = document.getElementById('navMenu'), navbar = document.getElementById('navbar');
-    mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); const icon = mobileToggle.querySelector('i'); icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); });
-    document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) navMenu.classList.remove('active'); });
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
-    revealElements.forEach(el => observer.observe(el));
-    renderCategories(); applyFilters();
+
+    function renderDocs() {
+      const grid = document.getElementById('docGrid');
+      document.getElementById('visibleCount').textContent = filteredDocs.length;
+      if (!filteredDocs.length) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--muted);">No guides found. Try a different category or search term.</div>`;
+        return;
+      }
+      grid.innerHTML = filteredDocs.map(d => `
+        <div class="doc-card" data-id="${d.id}">
+          <div class="doc-thumbnail">
+            <div class="doc-file-icon"><i class="fa-solid fa-file-pdf"></i><span class="doc-ext">PDF</span></div>
+            <div class="doc-badge badge-${d.badge}">${badgeLabels[d.badge] || d.badge}</div>
+            <div class="doc-actions-overlay">
+              <button class="overlay-btn view-doc" data-id="${d.id}"><i class="fa-solid fa-eye"></i></button>
+              <button class="overlay-btn dl-doc" data-id="${d.id}"><i class="fa-solid fa-download"></i></button>
+            </div>
+          </div>
+          <div class="doc-body">
+            <div class="doc-category-tag"><i class="fa-solid fa-tag"></i> ${d.category}</div>
+            <h3 class="doc-title">${d.title}</h3>
+            <p class="doc-desc">${d.description}</p>
+            <div class="doc-meta">
+              <span class="doc-meta-item"><i class="fa-solid fa-calendar-alt"></i> ${new Date(d.date).toLocaleDateString()}</span>
+              <span class="doc-meta-item"><i class="fa-solid fa-file-alt"></i> ${d.pages} pages</span>
+            </div>
+          </div>
+          <div class="doc-footer">
+            <span class="doc-size-badge">${d.size}</span>
+            <div style="display:flex;gap:0.5rem;">
+              <button class="btn btn-primary-sm view-doc" data-id="${d.id}"><i class="fa-solid fa-eye"></i> View</button>
+              <button class="btn btn-outline-sm dl-doc" data-id="${d.id}"><i class="fa-solid fa-download"></i></button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.view-doc').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); openDoc(+b.dataset.id); }));
+      document.querySelectorAll('.dl-doc').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); downloadDoc(+b.dataset.id); }));
+      document.querySelectorAll('.doc-card').forEach(c => c.addEventListener('click', () => openDoc(+c.dataset.id)));
+    }
+
+    function downloadDoc(id) {
+      const doc = documents.find(d => d.id === id);
+      if (!doc || doc.demo) { alert('Demo guide — add real file to enable download.'); return; }
+      if (doc.url) {
+        const a = document.createElement('a'); a.href = doc.url; a.download = doc.title.replace(/[^a-z0-9]/gi, '_') + '.' + doc.type; a.click();
+        dlCount++; localStorage.setItem('rf_guide_dls', dlCount);
+        document.getElementById('dlCount').textContent = dlCount;
+      } else { alert('No file URL set.'); }
+    }
+
+    function openDoc(id) {
+      const doc = documents.find(d => d.id === id);
+      if (!doc) return;
+      viewCount++; localStorage.setItem('rf_guide_views', viewCount);
+      document.getElementById('viewCount').textContent = viewCount;
+      if (doc.url && !doc.demo) {
+        window.open(doc.url, '_blank');
+      } else {
+        alert('Demo guide — add your PDF file to enable viewing.\n\nExpected path: documents/' + doc.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.pdf');
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', applyFilters);
+    document.getElementById('sortSelect').addEventListener('change', e => { currentSort = e.target.value; applyFilters(); });
+
+    document.getElementById('gridBtn').addEventListener('click', () => {
+      document.getElementById('docGrid').classList.remove('list-view');
+      document.getElementById('gridBtn').classList.add('active');
+      document.getElementById('listBtn').classList.remove('active');
+    });
+
+    document.getElementById('listBtn').addEventListener('click', () => {
+      document.getElementById('docGrid').classList.add('list-view');
+      document.getElementById('listBtn').classList.add('active');
+      document.getElementById('gridBtn').classList.remove('active');
+    });
+
+    renderCategories();
+    applyFilters();
   </script>
 </body>
 </html>

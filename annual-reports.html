@@ -1,3 +1,5 @@
+Here is the HTML code for an "Annual Reports" page that uses the same theme and styling as your index page.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,454 +7,1135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Annual Reports — RigenFarms | Climate‑Smart Agriculture Impact</title>
   <meta name="description" content="Browse RigenFarms annual reports, impact summaries, and year‑by‑year documentation of wicking gardens, school food security, and community climate‑smart action." />
-  <link rel="icon" href="images/logo.png" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     :root {
-      /* ─── WeCare Blue Palette ─── */
-      --primary: #1e3a8a;
-      --primary-light: #3b82f6;
-      --primary-dark: #1e40af;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --text: #1e293b;
-      --text-light: #334155;
-      --text-muted: #475569;
-      --bg: #ffffff;
-      --bg-soft: #f8fafc;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.2s ease;
-      --grad-brand: linear-gradient(135deg, var(--primary), var(--primary-light));
+      --ink: #0c1b2a;
+      --ink-soft: #33495f;
+      --muted: #5a7189;
+      --cream: #eef3fa;
+      --cream-2: #f6f9fc;
+      --sage: #d7e6f6;
+      --green: #124a80;
+      --green-2: #0b3560;
+      --leaf: #4f97d8;
+      --gold: #35c6f4;
+      --gold-ink: #052033;
+      --white: #ffffff;
+      --line: rgba(12, 27, 42, 0.12);
+      --line-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 14px rgba(9, 28, 48, 0.08);
+      --shadow: 0 24px 60px rgba(6, 22, 40, 0.20);
+      --shadow-soft: 0 14px 34px rgba(9, 28, 48, 0.10);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --max: 1200px;
     }
-    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.5; font-size: 1rem; -webkit-font-smoothing: antialiased; }
-    .container { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 
-    .top-bar { background: var(--primary-dark); color: white; font-size: .85rem; padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
-    .top-bar-links a { color: rgba(255,255,255,.85); text-decoration: none; font-weight: 500; font-size: .85rem; transition: var(--transition); }
-    .top-bar-links a:hover { color: white; }
-    .top-bar-actions { display: flex; gap: 1rem; }
-    .top-btn { padding: .4rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: .85rem; transition: var(--transition); display: inline-flex; align-items: center; gap: .5rem; }
-    .top-btn.report { background: var(--accent); color: white; }
-    .top-btn.report:hover { background: #d97706; transform: translateY(-1px); }
-    .top-btn.donate { background: white; color: var(--primary); }
-    .top-btn.donate:hover { background: #f1f5f9; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: var(--transition); }
-    .navbar.scrolled { box-shadow: var(--shadow-sm); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; gap: 1.5rem; }
-    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 10px; }
-    .brand-text p { font-size: .75rem; font-weight: 700; color: var(--text-muted); letter-spacing: .5px; }
-    .nav-menu { list-style: none; display: flex; align-items: center; gap: .25rem; }
-    .nav-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: .95rem; padding: .6rem 1.1rem; border-radius: 40px; transition: var(--transition); }
-    .nav-menu a:hover, .nav-menu a.active { background: var(--bg-soft); color: var(--primary); }
-    .mobile-toggle { display: none; background: white; border: 1px solid var(--border); padding: .6rem; border-radius: 10px; cursor: pointer; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-    .page-hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; min-height: 340px; }
-    .page-hero-slideshow { position: absolute; inset: 0; z-index: 0; }
-    .page-hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; background-size: cover; background-position: center; }
-    .page-hero-slide.active { opacity: 1; }
-    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(30,58,138,.45) 0%, rgba(30,64,175,.35) 100%); z-index: 1; }
-    .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; padding: 1.5rem 0; }
-    .page-hero h1 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2rem, 5vw, 2.8rem); color: white; margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,.25); }
-    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.92); line-height: 1.6; max-width: 650px; margin: 0 auto; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream-2);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-    .section { padding: 3rem 0; }
-    .section-header { text-align: center; max-width: 750px; margin: 0 auto 2.5rem; }
-    .section-kicker { font-size: .85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--primary-light); margin-bottom: .6rem; }
-    .section-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 1rem; color: var(--text); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(53, 198, 244, 0.75); outline-offset: 4px; border-radius: 4px; }
 
-    .stats-strip { background: var(--primary); }
-    .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .stat-cell { padding: 1.4rem 1rem; border-right: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; gap: 1rem; }
-    .stat-cell:last-child { border-right: none; }
-    .stat-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.15); display: grid; place-items: center; color: #fcd34d; font-size: 1.1rem; flex-shrink: 0; }
-    .stat-label { font-size: .75rem; color: rgba(255,255,255,.65); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .2rem; }
-    .stat-value { font-family: 'Outfit', sans-serif; font-size: 1.6rem; color: white; font-weight: 700; line-height: 1.2; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .container-wide { width: min(1360px, calc(100% - 48px)); margin-inline: auto; }
 
-    .year-tabs { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
-    .year-tab { padding: .6rem 1.3rem; border-radius: 999px; border: 1px solid var(--border); background: white; color: var(--text-light); font-weight: 600; font-size: .9rem; cursor: pointer; transition: var(--transition); }
-    .year-tab.active { background: var(--grad-brand); color: white; border-color: transparent; box-shadow: 0 4px 12px rgba(30,58,138,.25); }
+    /* Header */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 16, 28, 0.55), rgba(6, 16, 28, 0));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 280ms ease, color 280ms ease, box-shadow 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-    .search-bar-wrap { max-width: 480px; margin: 0 auto 2rem; position: relative; }
-    .search-bar-wrap input { width: 100%; padding: .9rem 1rem .9rem 2.8rem; border: 1px solid var(--border); border-radius: 999px; font-family: 'Inter', sans-serif; font-size: .95rem; background: white; outline: none; transition: var(--transition); }
-    .search-bar-wrap input:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
-    .search-bar-wrap i { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1rem; }
+    .site-header.is-scrolled,
+    .site-header.menu-open {
+      background: rgba(246, 249, 252, 0.86);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: 0 8px 30px rgba(9, 28, 48, 0.08);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-    .toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
-    .result-count { font-size: .9rem; color: var(--text-muted); font-weight: 500; }
-    .sort-select { padding: .6rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: white; font-size: .9rem; font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer; }
-    .view-toggle { display: flex; gap: .4rem; }
-    .vt-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: white; cursor: pointer; display: grid; place-items: center; color: var(--text-muted); font-size: .9rem; transition: var(--transition); }
-    .vt-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+    .utility {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: border-color 280ms ease;
+    }
 
-    .reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .site-header.is-scrolled .utility,
+    .site-header.menu-open .utility { border-color: var(--line); }
+
+    .utility-inner,
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .utility-inner { min-height: 40px; }
+
+    .utility-links,
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .utility-links { gap: 28px; opacity: 0.85; }
+    .utility-actions { display: flex; align-items: center; gap: 20px; }
+
+    .nav-inner { min-height: 80px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: background 280ms ease;
+    }
+
+    .site-header.is-scrolled .brand-mark,
+    .site-header.menu-open .brand-mark { background: var(--white); }
+
+    .brand-title {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .nav-links { gap: 4px; }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 200ms ease, color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-item.has-dropdown .nav-link { padding-right: 10px; }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-right: 4px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .dropdown-toggle i { transition: transform 220ms ease; display: block; }
+    .dropdown-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+    .nav-link:hover,
+    .dropdown-toggle:hover,
+    .dropdown-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.14); }
+
+    .site-header.is-scrolled .nav-link:hover,
+    .site-header.menu-open .nav-link:hover,
+    .site-header.is-scrolled .dropdown-toggle:hover,
+    .site-header.menu-open .dropdown-toggle:hover,
+    .site-header.is-scrolled .dropdown-toggle[aria-expanded="true"],
+    .site-header.menu-open .dropdown-toggle[aria-expanded="true"] { background: rgba(18, 74, 128, 0.08); color: var(--green); }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(6, 22, 40, 0.16);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+      z-index: 5;
+    }
+
+    .dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-item.has-dropdown:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .dropdown a:hover { background: var(--cream); color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-left: 6px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, var(--gold), #1fa3e0);
+      color: var(--gold-ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(53, 198, 244, 0.32);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(53, 198, 244, 0.42);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      min-height: 55vh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("images/24.jpg") center / cover no-repeat;
+      transform: scale(1.05);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.88) 0%, rgba(6, 22, 40, 0.5) 55%, rgba(6, 22, 40, 0.2) 100%),
+                  linear-gradient(0deg, rgba(5, 16, 28, 0.8) 0%, rgba(6, 22, 40, 0.2) 40%, rgba(6, 22, 40, 0.5) 100%);
+    }
+
+    .page-hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: min(50vw, 600px);
+      aspect-ratio: 1;
+      right: -5%;
+      top: -10%;
+      background: radial-gradient(circle, rgba(53, 198, 244, 0.28), rgba(53, 198, 244, 0) 68%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.05) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-20px, -8px, 0); }
+    }
+
+    .page-hero-content {
+      width: min(800px, 100%);
+      padding: 190px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .page-hero h1,
+    .section-title {
+      font-family: "Libre Baskerville", Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 700;
+      background: linear-gradient(100deg, #ffffff 55%, #bfe6fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 26px 0 0;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--cream-2);
+    }
+
+    .section.alt { background: var(--cream); }
+    .section.green { background: linear-gradient(160deg, var(--green-2), var(--green)); color: var(--white); }
+    .section.compact { padding-block: clamp(60px, 8vw, 90px); }
+
+    .section-kicker {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .green .section-kicker { color: var(--gold); }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .green .section-copy { color: rgba(255, 255, 255, 0.8); }
+
+    /* Stats strip */
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line-light);
+    }
+
+    .stat {
+      padding: 36px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat span { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
+
+    /* Reports grid */
+    .year-tabs {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .year-tab {
+      padding: 0.7rem 1.4rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink-soft);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 200ms ease;
+    }
+
+    .year-tab.active {
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(18, 74, 128, 0.25);
+    }
+
+    .search-bar-wrap {
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .search-bar-wrap input {
+      width: 100%;
+      padding: 0.9rem 1rem 0.9rem 2.8rem;
+      border: 1px solid var(--line);
+      border-radius: 60px;
+      font-size: 0.95rem;
+      background: var(--white);
+      outline: none;
+      transition: border-color 200ms ease;
+    }
+
+    .search-bar-wrap input:focus {
+      border-color: var(--leaf);
+      box-shadow: 0 0 0 3px rgba(79, 151, 216, 0.15);
+    }
+
+    .search-bar-wrap i {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .result-count { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+
+    .sort-select {
+      padding: 0.6rem 1rem;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .view-toggle { display: flex; gap: 0.4rem; }
+
+    .vt-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: all 200ms ease;
+    }
+
+    .vt-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+
+    .reports-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
     .reports-grid.list-mode { grid-template-columns: 1fr; }
-    .report-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: var(--transition); cursor: pointer; animation: fadeUp .4s ease both; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    .report-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(30,58,138,.2); }
-    .report-card-banner { position: relative; height: 180px; overflow: hidden; background: var(--grad-brand); display: flex; align-items: center; justify-content: center; }
-    .report-year-bg { position: absolute; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 6rem; color: rgba(255,255,255,.08); letter-spacing: -3px; right: -15px; bottom: -25px; pointer-events: none; }
-    .report-file-mock { width: 70px; height: 85px; background: white; border-radius: 10px 10px 5px 5px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,.25); }
-    .report-file-mock i { font-size: 1.8rem; color: #e53e3e; }
-    .report-file-mock .file-ext { font-size: .7rem; font-weight: 600; background: #fff5f5; color: #e53e3e; padding: .2rem .45rem; border-radius: 4px; margin-top: .35rem; }
-    .report-badge { position: absolute; top: .8rem; left: .8rem; z-index: 2; padding: .3rem .8rem; border-radius: 999px; font-size: .7rem; font-weight: 800; backdrop-filter: blur(8px); }
-    .badge-latest { background: rgba(16,185,129,.2); border: 1px solid rgba(16,185,129,.5); color: #d1fae5; }
-    .badge-published { background: rgba(59,130,246,.2); border: 1px solid rgba(59,130,246,.4); color: #bfdbfe; }
-    .badge-coming { background: rgba(245,158,11,.2); border: 1px solid rgba(245,158,11,.5); color: #fde68a; }
-    .report-hover-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(30,58,138,.85); display: flex; align-items: center; justify-content: center; gap: .8rem; opacity: 0; transition: var(--transition); }
-    .report-card:hover .report-hover-overlay { opacity: 1; }
-    .overlay-action-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.2); color: white; font-size: 1rem; cursor: pointer; display: grid; place-items: center; transition: var(--transition); }
-    .overlay-action-btn:hover { background: white; color: var(--primary); transform: scale(1.05); }
-    .report-body { padding: 1.2rem 1.3rem 1rem; }
-    .report-year-tag { font-size: .7rem; font-weight: 800; text-transform: uppercase; color: var(--primary-light); margin-bottom: .4rem; display: flex; align-items: center; gap: .4rem; }
-    .report-title { font-weight: 700; font-size: 1.1rem; color: var(--text); line-height: 1.35; margin-bottom: .7rem; }
-    .report-desc { color: var(--text-muted); font-size: .9rem; line-height: 1.55; margin-bottom: .9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .report-highlights { margin-bottom: .9rem; }
-    .report-highlight { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: var(--text-light); font-weight: 500; margin-bottom: .4rem; }
-    .report-highlight i { color: var(--success); font-size: .75rem; }
-    .report-meta { display: flex; flex-wrap: wrap; gap: .6rem; padding-top: .8rem; border-top: 1px solid var(--border); }
-    .meta-pill { display: inline-flex; align-items: center; gap: .4rem; padding: .35rem .8rem; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--border); font-size: .75rem; font-weight: 600; color: var(--text-light); }
-    .report-footer { padding: .8rem 1.3rem 1rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); background: var(--bg-soft); }
-    .report-size { font-size: .8rem; color: var(--text-muted); font-weight: 600; }
-    .r-btn { display: inline-flex; align-items: center; gap: .45rem; padding: .55rem 1rem; border-radius: 10px; font-size: .85rem; font-weight: 700; cursor: pointer; text-decoration: none; border: none; transition: var(--transition); }
-    .r-btn.primary { background: var(--grad-brand); color: white; box-shadow: 0 2px 8px rgba(30,58,138,.2); }
-    .r-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30,58,138,.3); }
-    .r-btn.secondary { background: var(--bg-soft); color: var(--text-light); border: 1px solid var(--border); }
-    .r-btn.secondary:hover { background: white; border-color: var(--primary-light); color: var(--primary); }
 
-    .impact-section { background: var(--grad-brand); padding: 4rem 0; }
-    .impact-section .section-kicker { color: #fcd34d; }
-    .impact-section .section-title { color: white; }
-    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
-    .impact-stat { text-align: center; padding: 1.5rem 1rem; border-radius: var(--radius); background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); transition: var(--transition); }
-    .impact-stat:hover { background: rgba(255,255,255,.2); transform: translateY(-4px); }
-    .impact-stat-number { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2rem; color: white; margin-bottom: .5rem; }
-    .impact-stat-label { color: rgba(255,255,255,.9); font-weight: 600; font-size: .9rem; }
-
-    .cta-section { padding: 3rem 0; }
-    .cta-box { background: var(--grad-brand); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; }
-    .cta-box h3 { font-size: 1.4rem; font-weight: 700; color: white; margin-bottom: .8rem; }
-    .cta-box p { font-size: .95rem; color: rgba(255,255,255,.85); margin-bottom: 1.2rem; }
-    .btn { border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; border-radius: 60px; padding: .7rem 1.4rem; font-weight: 600; font-size: .9rem; transition: var(--transition); }
-    .btn.white { background: white; color: var(--primary); }
-    .btn.white:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .btn.ghost { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.4); color: white; }
-    .btn.ghost:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
-
-    .footer { background: #0a1628; color: white; padding: 3rem 0 1.5rem; margin-top: 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; }
-    .footer-brand { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
-    .footer-brand img { height: 52px; background: white; padding: 8px; border-radius: 12px; }
-    .footer h5 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: white; }
-    .footer ul li { margin-bottom: .5rem; list-style: none; }
-    .footer a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .85rem; transition: var(--transition); }
-    .footer a:hover { color: white; }
-    .social-links { display: flex; gap: .8rem; margin-top: 1rem; }
-    .social-links a { width: 36px; height: 36px; background: rgba(255,255,255,.08); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
-    .footer-bottom { text-align: center; padding-top: 1rem; font-size: .8rem; border-top: 1px solid rgba(255,255,255,.08); }
-
-    .modal-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(10,15,35,.92); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal { background: white; border-radius: var(--radius); width: 100%; max-width: 1000px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,.4); }
-    .modal-header { padding: 1rem 1.2rem; background: var(--grad-brand); display: flex; align-items: center; gap: 1rem; }
-    .modal-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,.15); display: grid; place-items: center; font-size: 1.2rem; color: white; }
-    .modal-title-group { flex: 1; }
-    .modal-title { font-weight: 700; font-size: 1rem; color: white; }
-    .modal-sub { font-size: .8rem; color: rgba(255,255,255,.7); }
-    .modal-close { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,.1); color: white; cursor: pointer; display: grid; place-items: center; border: none; transition: var(--transition); }
-    .modal-close:hover { background: rgba(255,255,255,.25); }
-    .viewer-toolbar { padding: .7rem 1rem; background: var(--bg-soft); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
-    .page-info { font-size: .85rem; color: var(--text-muted); font-weight: 500; }
-    .vtb-btn { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: white; cursor: pointer; font-size: .85rem; transition: var(--transition); }
-    .vtb-btn:hover { border-color: var(--primary-light); color: var(--primary); }
-    .modal-body { flex: 1; overflow: auto; background: #1a1f2e; display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 0; }
-    .viewer-canvas-wrap { background: white; box-shadow: 0 4px 20px rgba(0,0,0,.3); border-radius: 4px; overflow: auto; max-width: 100%; }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .spinner { width: 40px; height: 40px; border-radius: 50%; border: 3px solid rgba(255,255,255,.2); border-top-color: var(--accent); animation: spin .8s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .viewer-loading { display: flex; flex-direction: column; align-items: center; gap: 1rem; color: rgba(255,255,255,.7); }
-
-    @media (max-width: 1024px) {
-      .top-bar { display: none; }
-      .mobile-toggle { display: flex; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; gap: .5rem; padding: 1.2rem; transform: translateY(-150%); transition: .25s ease; box-shadow: var(--shadow-lg); border-bottom: 1px solid var(--border); z-index: 999; }
-      .nav-menu.active { transform: translateY(0); }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .report-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      cursor: pointer;
     }
-    @media (max-width: 640px) {
-      .impact-grid { grid-template-columns: 1fr; }
+
+    .report-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .report-card-banner {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .report-year-bg {
+      position: absolute;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 700;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.08);
+      letter-spacing: -3px;
+      right: -15px;
+      bottom: -25px;
+      pointer-events: none;
+    }
+
+    .report-file-mock {
+      width: 70px;
+      height: 85px;
+      background: var(--white);
+      border-radius: 10px 10px 5px 5px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .report-file-mock i { font-size: 1.8rem; color: #e53e3e; }
+
+    .report-file-mock .file-ext {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #fff5f5;
+      color: #e53e3e;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      margin-top: 0.35rem;
+    }
+
+    .report-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      z-index: 2;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-latest { background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.5); color: #d1fae5; }
+    .badge-published { background: rgba(53, 198, 244, 0.2); border: 1px solid rgba(53, 198, 244, 0.4); color: #bfe6fb; }
+    .badge-coming { background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.5); color: #fde68a; }
+
+    .report-hover-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: rgba(12, 27, 42, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    .report-card:hover .report-hover-overlay { opacity: 1; }
+
+    .overlay-action-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      font-size: 1rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 200ms ease;
+    }
+
+    .overlay-action-btn:hover { background: var(--white); color: var(--green); transform: scale(1.05); }
+
+    .report-body { padding: 1.2rem 1.3rem 1rem; }
+
+    .report-year-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--leaf);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .report-title { font-weight: 700; font-size: 1.1rem; color: var(--ink); line-height: 1.35; margin-bottom: 0.7rem; }
+
+    .report-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0.9rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .report-highlights { margin-bottom: 0.9rem; }
+
+    .report-highlight {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .report-highlight i { color: #10b981; font-size: 0.75rem; }
+
+    .report-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 40px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .report-footer {
+      padding: 0.8rem 1.3rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      background: var(--cream-2);
+    }
+
+    .report-size { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+
+    .r-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 200ms ease;
+    }
+
+    .r-btn.primary { background: linear-gradient(135deg, var(--green), var(--green-2)); color: var(--white); box-shadow: 0 4px 14px rgba(18, 74, 128, 0.2); }
+    .r-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(18, 74, 128, 0.3); }
+    .r-btn.secondary { background: var(--white); color: var(--ink-soft); border: 1px solid var(--line); }
+    .r-btn.secondary:hover { border-color: var(--leaf); color: var(--green); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 26px;
+      border-radius: 60px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease, filter 200ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); box-shadow: 0 16px 34px rgba(53, 198, 244, 0.32); }
+    .btn-primary:hover { filter: brightness(1.06); box-shadow: 0 22px 46px rgba(53, 198, 244, 0.42); }
+    .btn-dark { background: var(--green); color: var(--white); }
+    .btn-dark:hover { background: var(--green-2); box-shadow: 0 14px 30px rgba(18, 74, 128, 0.28); }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 340px;
+      display: grid;
+      align-items: end;
+      padding: 64px;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(5, 16, 28, 0.92), rgba(6, 22, 40, 0.32)), url("images/ngo.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 { max-width: 720px; margin: 0; font-size: clamp(2rem, 4.6vw, 3.8rem); font-family: "Libre Baskerville", Georgia, serif; }
+    .cta-panel p { max-width: 650px; margin: 22px 0 0; color: rgba(255, 255, 255, 0.82); font-size: 1.1rem; }
+
+    .button-row { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
+
+    /* Footer */
+    .footer {
+      background: #061424;
+      color: var(--white);
+      padding: 70px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .footer-brand img { width: 48px; height: 48px; padding: 5px; border-radius: 50%; background: var(--white); }
+    .footer-brand strong { display: block; font-family: "Libre Baskerville", Georgia, serif; font-size: 1.1rem; }
+
+    .footer p { color: rgba(255, 255, 255, 0.65); margin: 0; }
+    .footer h3 { margin: 0 0 18px; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-links { flex-direction: column; align-items: flex-start; gap: 12px; list-style: none; display: flex; }
+    .footer-links a, .footer-contact a, .footer-contact span { color: rgba(255, 255, 255, 0.68); transition: color 180ms; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--white); }
+
+    .footer-contact { display: grid; gap: 14px; font-style: normal; }
+    .newsletter { display: flex; gap: 8px; margin-top: 24px; }
+    .newsletter input {
+      width: 100%; min-height: 48px; border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px; padding: 0 16px; color: white; background: rgba(255, 255, 255, 0.08);
+    }
+    .newsletter input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .newsletter button {
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1487c9); color: var(--gold-ink); cursor: pointer;
+    }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.7); transition: 180ms; }
+    .socials a:hover { background: var(--gold); color: var(--gold-ink); transform: translateY(-2px); }
+
+    .wa-fab {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px;
+      display: grid; place-items: center; border-radius: 50%; background: #25d366; color: white;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.35); font-size: 1.6rem;
+    }
+    .wa-fab:hover { transform: translateY(-3px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 100ms; } .delay-2 { transition-delay: 200ms; }
+
+    @media (max-width: 1080px) {
+      .nav-links { position: fixed; top: 120px; left: 24px; right: 24px; display: none; padding: 16px; border-radius: var(--radius); background: white; color: var(--ink); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.is-open { display: flex; }
+      .nav-item { flex-wrap: wrap; }
+      .dropdown { position: static; width: 100%; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; background: transparent; padding: 0 0 0 16px; max-height: 0; overflow: hidden; transition: max-height 260ms ease; }
+      .dropdown.is-open { max-height: 400px; }
+      .dropdown-toggle { order: 2; margin-left: auto; }
+      .nav-link { order: 1; flex: 1; }
+      .menu-toggle { display: flex; }
+      .utility-actions { display: none; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 780px) {
+      .container, .container-wide { width: min(100% - 32px, var(--max)); }
+      .utility { display: none; }
+      .stats-band { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
       .reports-grid { grid-template-columns: 1fr; }
-      .stat-cell { padding: 1rem .8rem; }
-      .stat-value { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
-
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-inner">
-        <ul class="top-bar-links">
-          <li><a href="contactus.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-        </ul>
-        <div class="top-bar-actions">
-          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" class="top-btn report"><i class="fab fa-linkedin-in"></i> Follow on LinkedIn</a>
-          <a href="donation.html" class="top-btn donate"><i class="fas fa-seedling"></i> Support Our Farms</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="index.html">
-          <img src="images/logo.png" alt="RigenFarms Logo" />
-          <div class="brand-text"><p>GROW • NOURISH • SUSTAIN</p></div>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutus.html">Who We Are</a></li>
-          <li><a href="projects.html">Our Work</a></li>
-          <li><a href="volunteers.html">Get Involved</a></li>
+  <header class="site-header" id="siteHeader">
+    <div class="utility">
+      <div class="container-wide utility-inner">
+        <ul class="utility-links">
           <li><a href="contactus.html">Contact</a></li>
+          <li><a href="annual-reports.html">Reports</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
-        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="page-hero-slideshow">
-      <div class="page-hero-slide active" style="background-image:url('images/24.jpg');"></div>
-      <div class="page-hero-slide" style="background-image:url('images/18.JPG');"></div>
-    </div>
-    <div class="page-hero-overlay"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <h1>Annual Reports</h1>
-        <p>Explore RigenFarms' annual reports, impact summaries, and year‑by‑year documentation of our climate‑smart agriculture initiatives, wicking garden projects, and community empowerment.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="stats-strip">
-    <div class="container" style="padding:0;">
-      <div class="stats-inner">
-        <div class="stat-cell"><div class="stat-icon"><i class="fas fa-file-alt"></i></div><div><div class="stat-label">Total Reports</div><div class="stat-value" id="totalReports">0</div></div></div>
-        <div class="stat-cell"><div class="stat-icon"><i class="fas fa-calendar-check"></i></div><div><div class="stat-label">Years Covered</div><div class="stat-value" id="yearsCovered">0</div></div></div>
-        <div class="stat-cell"><div class="stat-icon"><i class="fas fa-eye"></i></div><div><div class="stat-label">Views</div><div class="stat-value" id="viewCount">0</div></div></div>
-        <div class="stat-cell"><div class="stat-icon"><i class="fas fa-download"></i></div><div><div class="stat-label">Downloads</div><div class="stat-value" id="dlCount">0</div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-kicker"><i class="fas fa-book-open"></i> Reports Library</div>
-        <h2 class="section-title">Annual Report Archive</h2>
-      </div>
-      <div class="search-bar-wrap">
-        <i class="fas fa-search"></i>
-        <input type="text" id="searchInput" placeholder="Search by year, title, or keyword..." autocomplete="off" />
-      </div>
-      <div class="year-tabs" id="yearTabs"></div>
-      <div class="toolbar">
-        <div class="result-count"><strong id="visibleCount">0</strong> report(s) shown</div>
-        <select class="sort-select" id="sortSelect">
-          <option value="year-desc">Newest First</option>
-          <option value="year-asc">Oldest First</option>
-          <option value="title-asc">Title A–Z</option>
-        </select>
-        <div class="view-toggle">
-          <button class="vt-btn active" id="gridBtn"><i class="fas fa-th-large"></i></button>
-          <button class="vt-btn" id="listBtn"><i class="fas fa-list"></i></button>
-        </div>
-      </div>
-      <div class="reports-grid" id="reportsGrid"></div>
-    </div>
-  </section>
-
-  <section class="impact-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-kicker">Our Growing Impact</div>
-        <h2 class="section-title">Impact Over the Years</h2>
-        <p style="color:rgba(255,255,255,.85);">A snapshot of RigenFarms' cumulative impact across all reported years.</p>
-      </div>
-      <div class="impact-grid">
-        <div class="impact-stat"><div class="impact-stat-number">10,000+</div><div class="impact-stat-label">Seedlings Distributed</div></div>
-        <div class="impact-stat"><div class="impact-stat-number">500+</div><div class="impact-stat-label">Wicking Beds Installed</div></div>
-        <div class="impact-stat"><div class="impact-stat-number">25</div><div class="impact-stat-label">Schools Reached</div></div>
-        <div class="impact-stat"><div class="impact-stat-number">30+</div><div class="impact-stat-label">Training Workshops</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-box reveal">
-        <h3>Support Climate‑Smart Agriculture</h3>
-        <p>Your help allows RigenFarms to expand wicking gardens, train more communities, and build food‑secure futures across Kenya.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="donation.html" class="btn white"><i class="fas fa-heart"></i> Donate Now</a>
-          <a href="contactus.html" class="btn ghost"><i class="fas fa-envelope"></i> Contact Us</a>
+        <div class="utility-actions">
+          <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/254706476939" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </div>
-  </section>
+    <nav class="container-wide nav-inner" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="RigenFarms home">
+        <img class="brand-mark" src="images/logo.png" alt="" />
+        <span>
+          <span class="brand-title">RigenFarms</span>
+          <span class="brand-kicker">Grow smart. Eat well. Live green.</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="aboutus.html">About</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="aboutus.html" role="menuitem">Mission</a>
+            <a href="aboutus.html#team" role="menuitem">Team</a>
+            <a href="impact.html" role="menuitem">Impact</a>
+          </div>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="projects.html">Programs</a>
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Programs menu">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="projects.html" role="menuitem">Agriculture</a>
+            <a href="projects.html" role="menuitem">School Gardens</a>
+            <a href="memoranda.html" role="menuitem">Resources</a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#innovation">Innovation</a></li>
+        <li><a class="nav-link" href="index.html#insights">Insights</a></li>
+        <li><a class="nav-link" href="volunteers.html">Get Involved</a></li>
+        <li><a class="nav-cta" href="donation.html">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" id="top">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero-content reveal is-visible">
+          <span class="eyebrow">Transparency & impact</span>
+          <h1>Annual Reports.</h1>
+          <p class="hero-copy">Explore RigenFarms' annual reports, impact summaries, and year‑by‑year documentation of our climate‑smart agriculture initiatives, wicking garden projects, and community empowerment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green compact">
+      <div class="container">
+        <div class="stats-band reveal">
+          <div class="stat"><strong id="totalReports">0</strong><span>Total Reports</span></div>
+          <div class="stat"><strong id="yearsCovered">0</strong><span>Years Covered</span></div>
+          <div class="stat"><strong id="viewCount">0</strong><span>Views</span></div>
+          <div class="stat"><strong id="dlCount">0</strong><span>Downloads</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="year-tabs" id="yearTabs"></div>
+        <div class="search-bar-wrap">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search by year, title, or keyword..." autocomplete="off" />
+        </div>
+        <div class="toolbar">
+          <div class="result-count"><strong id="visibleCount">0</strong> report(s) shown</div>
+          <select class="sort-select" id="sortSelect">
+            <option value="year-desc">Newest First</option>
+            <option value="year-asc">Oldest First</option>
+            <option value="title-asc">Title A–Z</option>
+          </select>
+          <div class="view-toggle">
+            <button class="vt-btn active" id="gridBtn"><i class="fa-solid fa-th-large"></i></button>
+            <button class="vt-btn" id="listBtn"><i class="fa-solid fa-list"></i></button>
+          </div>
+        </div>
+        <div class="reports-grid reveal" id="reportsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="section-kicker">Support our work</p>
+            <h2>Help us grow climate‑smart communities.</h2>
+            <p>Your support allows RigenFarms to expand wicking gardens, train more communities, and build food‑secure futures across Kenya.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="donation.html">Donate now <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-dark" href="contactus.html">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img src="images/logo.png" alt="RigenFarms Logo" />
-            <div>
-              <h5 style="margin:0;">RigenFarms</h5>
-              <p style="font-size:.8rem;color:rgba(255,255,255,.7);">Grow · Nourish · Sustain</p>
-            </div>
+            <img src="images/logo.png" alt="" />
+            <div><strong>RigenFarms</strong><span>Grow smart. Eat well.</span></div>
           </div>
-          <p style="font-size:.85rem;line-height:1.6;color:rgba(255,255,255,.75);">A community-driven initiative promoting climate‑smart agriculture through innovative wicking container gardening, empowering schools and communities for a food‑secure, resilient future.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/rigenfarms/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <p>Empowering schools and communities with climate‑smart wicking container gardening to build food security and resilience across Kenya.</p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <div>
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="projects.html">Our Work</a></li>
-            <li><a href="volunteers.html">Get Involved</a></li>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="projects.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
           </ul>
         </div>
         <div>
-          <h5>Resources</h5>
-          <ul>
-            <li><a href="annual-reports.html">Annual Reports</a></li>
-            <li><a href="memoranda.html">Gardening Guides</a></li>
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="annual-reports.html">Reports</a></li>
+            <li><a href="memoranda.html">Guides</a></li>
             <li><a href="donation.html">Donate</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
         <div>
-          <h5>Contact</h5>
-          <ul>
-            <li><i class="fas fa-envelope"></i> info@rigenfarms.org</li>
-            <li><i class="fas fa-phone"></i> +254 797 680921</li>
-            <li><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya</li>
-          </ul>
+          <h3>Contact</h3>
+          <address class="footer-contact">
+            <a href="mailto:rigenfarms@gmail.com">rigenfarms@gmail.com</a>
+            <a href="tel:+254706476939">+254 706 476 939</a>
+            <span>Kisumu, Kenya</span>
+          </address>
+          <form class="newsletter">
+            <input type="email" placeholder="Email updates" />
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> RigenFarms. All Rights Reserved. Rooted in Education and Environmental Stewardship.</p>
+        <span>&copy; <span id="year"></span> RigenFarms.</span>
+        <span><a href="privacy.html">Privacy Policy</a></span>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <div class="modal-header">
-        <div class="modal-icon"><i class="fas fa-file-pdf"></i></div>
-        <div class="modal-title-group">
-          <div class="modal-title" id="modalTitle"></div>
-          <div class="modal-sub" id="modalSub"></div>
-        </div>
-        <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="viewer-toolbar" id="viewerToolbar">
-        <button class="vtb-btn" id="prevPage"><i class="fas fa-chevron-left"></i></button>
-        <span class="page-info" id="pageInfo">Page 1 / 1</span>
-        <button class="vtb-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
-        <div style="width:1px;height:24px;background:var(--border);"></div>
-        <button class="vtb-btn" id="zoomOut"><i class="fas fa-search-minus"></i></button>
-        <span id="zoomLevel" style="font-size:.85rem;min-width:50px;text-align:center;">100%</span>
-        <button class="vtb-btn" id="zoomIn"><i class="fas fa-search-plus"></i></button>
-        <button class="vtb-btn" id="rotateBtn"><i class="fas fa-redo"></i></button>
-      </div>
-      <div class="modal-body" id="modalBody">
-        <div class="viewer-loading"><div class="spinner"></div><span>Loading PDF…</span></div>
-      </div>
-    </div>
-  </div>
+  <a class="wa-fab" href="https://wa.me/254706476939" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // RigenFarms annual reports data (unchanged)
-    const reports = [
-      {
-        id: 1, year: 2026,
-        title: "RigenFarms Annual Report 2026",
-        desc: "Our forthcoming report capturing the expansion of school wicking gardens, climate‑smart training, and community food hubs.",
-        highlights: ["40+ school gardens installed", "10,000+ seedlings distributed", "5 new community partnerships"],
-        badge: "coming", pages: 0, size: "—", url: "", demo: true, type: "pdf"
-      },
-      {
-        id: 2, year: 2025,
-        title: "RigenFarms Annual Report 2025",
-        desc: "A comprehensive look at our 2025 achievements: scaling wicking container technology, empowering youth agripreneurs, and strengthening community resilience.",
-        highlights: ["25 wicking bed workshops held", "500+ wicking beds installed", "3 new school programs launched"],
-        badge: "latest", pages: 13, size: "2.8 MB", url: "documents/rigenfarms-annual-report-2025.pdf", demo: false, type: "pdf"
-      },
-      {
-        id: 3, year: 2024,
-        title: "RigenFarms Annual Report 2024",
-        desc: "Documenting RigenFarms' third year of climate‑smart action, covering school garden expansions, nutrition outreach, and the launch of community food hubs.",
-        highlights: ["2,500+ community members trained", "15 school gardens established", "First harvest celebration event held"],
-        badge: "published", pages: 28, size: "1.9 MB", url: "", demo: true, type: "pdf"
-      },
-      {
-        id: 4, year: 2023,
-        title: "RigenFarms Annual Report 2023",
-        desc: "Our second year report covering the development of wicking garden starter kits, pilot programs in 8 schools, and the formation of our volunteer network.",
-        highlights: ["1,800 seedlings given out", "8 pilot school gardens", "Volunteer network launched"],
-        badge: "published", pages: 22, size: "1.4 MB", url: "", demo: true, type: "pdf"
-      },
-      {
-        id: 5, year: 2022,
-        title: "RigenFarms Inaugural Report 2022",
-        desc: "Our founding year report — charting the inception of RigenFarms, initial community consultations, and the first wicking bed installations in Kisumu.",
-        highlights: ["Organization officially registered", "50 wicking beds piloted", "3 community demo gardens established"],
-        badge: "published", pages: 16, size: "980 KB", url: "", demo: true, type: "pdf"
+    function updateHeader() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      if (!isOpen) closeAllDropdowns();
+    });
+
+    navLinks.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && !e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      } else if (link && e.target.closest(".dropdown") && window.innerWidth <= 1080) {
+        navLinks.classList.remove("is-open");
+        header.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       }
+    });
+
+    const dropdownToggles = Array.from(document.querySelectorAll(".dropdown-toggle"));
+
+    function closeAllDropdowns(except) {
+      dropdownToggles.forEach((btn) => {
+        if (btn === except) return;
+        btn.setAttribute("aria-expanded", "false");
+        btn.nextElementSibling.classList.remove("is-open");
+      });
+    }
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        const willOpen = btn.getAttribute("aria-expanded") !== "true";
+        closeAllDropdowns(btn);
+        btn.setAttribute("aria-expanded", String(willOpen));
+        dropdown.classList.toggle("is-open", willOpen);
+      });
+    });
+
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeAllDropdowns();
+        dropdownToggles.forEach((btn) => { if (document.activeElement === btn.nextElementSibling) btn.focus(); });
+      }
+    });
+    document.querySelectorAll(".dropdown").forEach((d) => d.addEventListener("click", (e) => e.stopPropagation()));
+    document.querySelector(".newsletter")?.addEventListener("submit", (e) => { e.preventDefault(); e.currentTarget.reset(); });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
+
+    /* Annual reports data & logic */
+    const reports = [
+      { id: 1, year: 2026, title: "RigenFarms Annual Report 2026", desc: "Our forthcoming report capturing the expansion of school wicking gardens, climate‑smart training, and community food hubs.", highlights: ["40+ school gardens installed", "10,000+ seedlings distributed", "5 new community partnerships"], badge: "coming", pages: 0, size: "—", url: "", demo: true },
+      { id: 2, year: 2025, title: "RigenFarms Annual Report 2025", desc: "A comprehensive look at our 2025 achievements: scaling wicking container technology, empowering youth agripreneurs, and strengthening community resilience.", highlights: ["25 wicking bed workshops held", "500+ wicking beds installed", "3 new school programs launched"], badge: "latest", pages: 13, size: "2.8 MB", url: "documents/rigenfarms-annual-report-2025.pdf", demo: false },
+      { id: 3, year: 2024, title: "RigenFarms Annual Report 2024", desc: "Documenting RigenFarms' third year of climate‑smart action, covering school garden expansions, nutrition outreach, and the launch of community food hubs.", highlights: ["2,500+ community members trained", "15 school gardens established", "First harvest celebration event held"], badge: "published", pages: 28, size: "1.9 MB", url: "", demo: true },
+      { id: 4, year: 2023, title: "RigenFarms Annual Report 2023", desc: "Our second year report covering the development of wicking garden starter kits, pilot programs in 8 schools, and the formation of our volunteer network.", highlights: ["1,800 seedlings given out", "8 pilot school gardens", "Volunteer network launched"], badge: "published", pages: 22, size: "1.4 MB", url: "", demo: true },
+      { id: 5, year: 2022, title: "RigenFarms Inaugural Report 2022", desc: "Our founding year report — charting the inception of RigenFarms, initial community consultations, and the first wicking bed installations in Kisumu.", highlights: ["Organization officially registered", "50 wicking beds piloted", "3 community demo gardens established"], badge: "published", pages: 16, size: "980 KB", url: "", demo: true }
     ];
 
     let filtered = [], activeYear = 'all', currentSort = 'year-desc';
     let viewCount = parseInt(localStorage.getItem('rf_ar_views') || '0');
     let dlCount = parseInt(localStorage.getItem('rf_ar_dls') || '0');
-    let pdfDoc = null, currentPage = 1, totalPages = 1, zoom = 1.0, rotation = 0;
 
     document.getElementById('viewCount').textContent = viewCount;
     document.getElementById('dlCount').textContent = dlCount;
 
-    function getYears() {
-      return [...new Set(reports.map(r => r.year))].sort((a, b) => b - a);
-    }
+    function getYears() { return [...new Set(reports.map(r => r.year))].sort((a, b) => b - a); }
 
     function renderYearTabs() {
       document.getElementById('yearTabs').innerHTML =
@@ -487,38 +1170,38 @@
       const grid = document.getElementById('reportsGrid');
       document.getElementById('visibleCount').textContent = filtered.length;
       if (!filtered.length) {
-        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--text-muted);"><i class="fas fa-folder-open" style="font-size:2rem;margin-bottom:1rem;display:block;"></i><h3>No reports found</h3><p>Try a different year or search term.</p></div>`;
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--muted);"><i class="fa-solid fa-folder-open" style="font-size:2rem;margin-bottom:1rem;display:block;"></i><h3>No reports found</h3><p>Try a different year or search term.</p></div>`;
         return;
       }
       grid.innerHTML = filtered.map(r => `
         <div class="report-card" data-id="${r.id}">
           <div class="report-card-banner">
             <div class="report-year-bg">${r.year}</div>
-            <div class="report-file-mock"><i class="fas fa-file-pdf"></i><span class="file-ext">PDF</span></div>
+            <div class="report-file-mock"><i class="fa-solid fa-file-pdf"></i><span class="file-ext">PDF</span></div>
             <div class="report-badge badge-${r.badge}">${badgeLabel[r.badge]}</div>
             ${r.badge !== 'coming' ? `<div class="report-hover-overlay">
-              <button class="overlay-action-btn view-btn" data-id="${r.id}"><i class="fas fa-eye"></i></button>
-              <button class="overlay-action-btn dl-btn" data-id="${r.id}"><i class="fas fa-download"></i></button>
+              <button class="overlay-action-btn view-btn" data-id="${r.id}"><i class="fa-solid fa-eye"></i></button>
+              <button class="overlay-action-btn dl-btn" data-id="${r.id}"><i class="fa-solid fa-download"></i></button>
             </div>` : ''}
           </div>
           <div class="report-body">
-            <div class="report-year-tag"><i class="fas fa-calendar-alt"></i> ${r.year} Annual Report</div>
+            <div class="report-year-tag"><i class="fa-solid fa-calendar-alt"></i> ${r.year} Annual Report</div>
             <h3 class="report-title">${r.title}</h3>
             <p class="report-desc">${r.desc}</p>
-            <div class="report-highlights">${r.highlights.map(h => `<div class="report-highlight"><i class="fas fa-check-circle"></i>${h}</div>`).join('')}</div>
+            <div class="report-highlights">${r.highlights.map(h => `<div class="report-highlight"><i class="fa-solid fa-check-circle"></i>${h}</div>`).join('')}</div>
             <div class="report-meta">
-              ${r.pages ? `<span class="meta-pill"><i class="fas fa-file-alt"></i>${r.pages} pages</span>` : ''}
-              ${r.size !== '—' ? `<span class="meta-pill"><i class="fas fa-hdd"></i>${r.size}</span>` : ''}
-              <span class="meta-pill"><i class="fas fa-seedling"></i>RigenFarms</span>
+              ${r.pages ? `<span class="meta-pill"><i class="fa-solid fa-file-alt"></i>${r.pages} pages</span>` : ''}
+              ${r.size !== '—' ? `<span class="meta-pill"><i class="fa-solid fa-hdd"></i>${r.size}</span>` : ''}
+              <span class="meta-pill"><i class="fa-solid fa-seedling"></i>RigenFarms</span>
             </div>
           </div>
           <div class="report-footer">
             <span class="report-size">${r.size}</span>
             <div style="display:flex;gap:.5rem;">
               ${r.badge !== 'coming'
-                ? `<button class="r-btn primary view-btn" data-id="${r.id}"><i class="fas fa-eye"></i> View</button>
-                   <button class="r-btn secondary dl-btn" data-id="${r.id}"><i class="fas fa-download"></i></button>`
-                : `<button class="r-btn secondary" disabled style="opacity:.6;"><i class="fas fa-clock"></i> Coming Soon</button>`}
+                ? `<button class="r-btn primary view-btn" data-id="${r.id}"><i class="fa-solid fa-eye"></i> View</button>
+                   <button class="r-btn secondary dl-btn" data-id="${r.id}"><i class="fa-solid fa-download"></i></button>`
+                : `<button class="r-btn secondary" disabled style="opacity:.6;"><i class="fa-solid fa-clock"></i> Coming Soon</button>`}
             </div>
           </div>
         </div>`).join('');
@@ -540,104 +1223,19 @@
       }
     }
 
-    function resetToolbar() {
-      ['prevPage','nextPage','pageInfo','zoomIn','zoomOut','zoomLevel','rotateBtn'].forEach(id => {
-        document.getElementById(id).style.display = '';
-      });
-      document.getElementById('modalBody').style.padding = '1.5rem';
-    }
-
     function openReport(id) {
       const r = reports.find(x => x.id === id);
       if (!r || r.badge === 'coming') return;
       viewCount++; localStorage.setItem('rf_ar_views', viewCount);
       document.getElementById('viewCount').textContent = viewCount;
-      document.getElementById('modalTitle').textContent = r.title;
-      document.getElementById('modalSub').textContent = `${r.year} · ${r.size} · ${r.pages || '—'} pages`;
-      resetToolbar();
-      document.getElementById('modalOverlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-      if (r.url && r.type === 'pdf') {
-        loadPDF(r.url);
+      if (r.url) {
+        window.open(r.url, '_blank');
+        dlCount++; localStorage.setItem('rf_ar_dls', dlCount);
+        document.getElementById('dlCount').textContent = dlCount;
       } else {
-        showDemoPlaceholder(r);
+        alert('Demo report — upload the actual PDF to enable viewing.');
       }
     }
-
-    function showDemoPlaceholder(r) {
-      document.getElementById('modalBody').innerHTML = `
-        <div style="color:white;text-align:center;max-width:400px;">
-          <i class="fas fa-file-pdf" style="font-size:3rem;opacity:.6;margin-bottom:1rem;display:block;"></i>
-          <h3 style="font-size:1.2rem;margin-bottom:.5rem;">${r.title}</h3>
-          <p style="font-size:.9rem;">Upload the actual PDF to enable the inline viewer.</p>
-          <div style="margin-top:1.5rem;padding:1rem;background:rgba(0,0,0,.3);border-radius:8px;font-family:monospace;font-size:.8rem;">
-            url: "documents/rigenfarms-annual-report-${r.year}.pdf"
-          </div>
-        </div>`;
-    }
-
-    async function loadPDF(url) {
-      document.getElementById('modalBody').innerHTML = `<div class="viewer-loading"><div class="spinner"></div><span>Loading PDF…</span></div>`;
-      try {
-        pdfDoc = await pdfjsLib.getDocument(url).promise;
-        totalPages = pdfDoc.numPages;
-        zoom = 1.0; rotation = 0;
-        document.getElementById('zoomLevel').textContent = '100%';
-        updatePageInfo();
-        renderPDFPage(1);
-      } catch (e) {
-        pdfDoc = null;
-        document.getElementById('modalBody').style.padding = '0';
-        ['prevPage','nextPage','pageInfo','zoomIn','zoomOut','zoomLevel','rotateBtn'].forEach(id => {
-          document.getElementById(id).style.display = 'none';
-        });
-        document.getElementById('modalBody').innerHTML =
-          `<iframe src="${url}" style="width:100%;height:100%;min-height:620px;border:none;" title="PDF Viewer">
-            <p style="color:white;padding:2rem;text-align:center;">Cannot display inline.
-              <a href="${url}" target="_blank" style="color:#fcd34d;">Open PDF</a>
-            </p>
-          </iframe>`;
-      }
-    }
-
-    async function renderPDFPage(num) {
-      if (!pdfDoc) return;
-      const page = await pdfDoc.getPage(num);
-      const viewport = page.getViewport({ scale: zoom, rotation });
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.height = viewport.height; canvas.width = viewport.width;
-      const wrap = document.createElement('div');
-      wrap.className = 'viewer-canvas-wrap';
-      wrap.appendChild(canvas);
-      document.getElementById('modalBody').innerHTML = '';
-      document.getElementById('modalBody').appendChild(wrap);
-      await page.render({ canvasContext: ctx, viewport }).promise;
-      currentPage = num; updatePageInfo();
-    }
-
-    function updatePageInfo() {
-      document.getElementById('pageInfo').textContent = `Page ${currentPage} / ${totalPages}`;
-      document.getElementById('prevPage').disabled = currentPage <= 1;
-      document.getElementById('nextPage').disabled = currentPage >= totalPages;
-    }
-
-    function updateZoomDisplay() { document.getElementById('zoomLevel').textContent = Math.round(zoom * 100) + '%'; }
-
-    document.getElementById('prevPage').addEventListener('click', () => { if (currentPage > 1) renderPDFPage(currentPage - 1); });
-    document.getElementById('nextPage').addEventListener('click', () => { if (currentPage < totalPages) renderPDFPage(currentPage + 1); });
-    document.getElementById('zoomIn').addEventListener('click', () => { zoom = Math.min(zoom + 0.25, 3); updateZoomDisplay(); if (pdfDoc) renderPDFPage(currentPage); });
-    document.getElementById('zoomOut').addEventListener('click', () => { zoom = Math.max(zoom - 0.25, 0.25); updateZoomDisplay(); if (pdfDoc) renderPDFPage(currentPage); });
-    document.getElementById('rotateBtn').addEventListener('click', () => { rotation = (rotation + 90) % 360; if (pdfDoc) renderPDFPage(currentPage); });
-
-    document.getElementById('closeModal').addEventListener('click', () => {
-      document.getElementById('modalOverlay').classList.remove('open');
-      document.body.style.overflow = '';
-      pdfDoc = null;
-    });
-    document.getElementById('modalOverlay').addEventListener('click', e => {
-      if (e.target === document.getElementById('modalOverlay')) document.getElementById('closeModal').click();
-    });
 
     document.getElementById('searchInput').addEventListener('input', applyFilters);
     document.getElementById('sortSelect').addEventListener('change', e => { currentSort = e.target.value; applyFilters(); });
@@ -652,35 +1250,9 @@
       document.getElementById('gridBtn').classList.remove('active');
     });
 
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times');
-    });
-    document.addEventListener('click', e => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) navMenu.classList.remove('active');
-    });
-    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30));
-
-    let slide = 0;
-    const heroSlides = document.querySelectorAll('.page-hero-slide');
-    if (heroSlides.length > 1) setInterval(() => {
-      heroSlides[slide].classList.remove('active');
-      slide = (slide + 1) % heroSlides.length;
-      heroSlides[slide].classList.add('active');
-    }, 5000);
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
     renderYearTabs();
     applyFilters();
   </script>
 </body>
 </html>
+```
